@@ -1,0 +1,62 @@
+
+.spec-chapter-title h1, h2, h3, h4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin-top: 16px;
+	margin-bottom: 4px;
+}
+
+.spec-chapter-title h1 {
+	font-size: 24px;
+	line-height: 30px;
+	color: #000000;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 20px;
+	line-height: 24px;
+}
+
+h3 {
+	font-size: 16px;
+	line-height: 19px;
+}
+
+h4 {
+	font-size: 12px;
+	line-height: 15px;
+}
+
+
+.spec-programlisting {
+  white-space:pre;
+  padding: 5px 24px 5px 24px;
+  font-family:monospace;
+}
+
+.spec-tbody {
+  padding: 5px 24px 5px 24px;
+}
+
+.spec-code {
+  white-space:pre;
+  font-family:monospace;
+}
+
+.spec-subscript {
+  vertical-align:sub;
+  font-size:xx-small;
+}
+
+.spec-para {
+  padding-bottom: 8px;
+}
+
+ul {
+	list-style-image: none;
+}
+
+
+span.spec-emphasis {
+	font-weight: bold;
+}

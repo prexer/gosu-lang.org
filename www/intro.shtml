@@ -1,0 +1,205 @@
+<html>
+<head>
+  <title>The Gosu Programming Language</title>
+  <link rel="stylesheet" type="text/css" href="gosu.css"/>
+  <SCRIPT language="JavaScript" SRC="javascript/javascript.js"></SCRIPT>
+  <SCRIPT language="JavaScript">
+    var tab = "intro";
+  </SCRIPT>
+</head>
+<body>
+<!--#include virtual="header.html" -->
+
+<h1>Introduction To Gosu</h1>
+<div>
+Gosu is an imperative statically-typed object-oriented programming language that is designed to be expressive, easy-to-read, and reasonably fast. Gosu supports several resource types:  
+<ul>
+  <li>Gosu classes - standard classes, and similar objects such as interfaces and enumerations</li>
+  <li>Gosu enhancements - add methods and properties to existing types (even Java types!)</li>
+  <li>Gosu templates - a convenient way to build large text objects with embedded Gosu scripts</li>
+  <li>Gosu programs - a way to write small scripts or launch larger Gosu applications</li>
+</ul>
+
+<p>See the Gosu documentation for a <a href="doc/wwhelp/wwhimpl/api.htm?&context=gosu&src=intro&topic=Welcome_to_Gosu">complete introduction to the Gosu language</a> and a reference table of  <a href="doc/wwhelp/wwhimpl/api.htm?&context=gosu&src=intro&topic=Notable_Differences_Between_Gosu_and_Java">syntax changes to convert Java code to Gosu code</a>.
+
+<h2>Gosu Classes</h2>
+
+<p>Below is an example of a Gosu class that demonstrates many of the features of Gosu. Mouse over any highlighted section to see explanations of each features of the language.</p>
+
+<pre class="code">
+<span class="codetip"><span><span class="keyword">package</span> example</span><div class="tip">Gosu supports package hierarchies just like Java. Packages correspond to the directory in which the Gosu class resides.
+    This class is in the file example/Person.gs. <br/>Note that the file extension for Gosu
+    classes is '.gs'.
+  </div></span>
+
+<span class="codetip"><span><span class="keyword">uses</span></span><div class="tip">The 'uses' keyword lets you use classes in other packages without typing their fully-qualified name. This 'uses' statement uses a '*' at the end to import all the classes in the 'java.util' package. Alternatively, you can specify individual classes in that hierarchy.<br/><br/>This is similar to the Java keyword 'import'.
+  </div></span> <span class="codetip"><span>java.util.*</span><div class="tip">This line imports the core Java utility classes. If you are already a Java developer, Gosu lets you use all your favorite Java classes.
+  </div></span>
+
+<span class="keyword">uses</span> java.io.File
+
+<span class="codetip"><span><span class="keyword">class</span> Person</span><div class="tip">As in most other programming languages, the 'class' keyword defines a new Gosu class.</div></span> <span class="codetip"><span><span class="keyword">extends</span> Contact</span><div class="tip">As in other programming languages, Gosu classes can extend other classes. In Gosu you can extend either Gosu classes or Java classes.</div></span> <span class="codetip"><span><span class="keyword">implements</span> IEmailable</span><div class="tip">Gosu also allows you to implement either Gosu or Java interfaces. Interfaces declare a set of required method signatures that a class must implement.</div></span> {
+
+  <span class="codetip"><span><span class="keyword">var</span> _name : String</span><div class="tip">Declare a variable in Gosu with the 'var' keyword, followed by the variable name, a colon, and then the type of the variable. This example declares a class variable of type String.<br/><br/>Like Java, Gosu supports accessibility modifiers like 'public' and 'private'. In the case of class variables, Gosu defaults to private access, which is typically what you want. </div></span>
+  <span class="keyword">var</span> _age : Integer <span class="codetip"><span><span class="keyword">as</span> Age</span><div class="tip">This syntax exposes the '_age' field as a <strong>public property</strong> named 'Age'. There is a longer syntax for implementing more dynamic and complicated properties (see below).</div> </span>
+  <span class="keyword">var</span> _relationship : Relationship <span class="keyword">as</span> <span class="codetip"><span><span class="keyword">readonly</span></span><div class="tip">The 'readonly' keyword defines a property that can be read but not set.</div></span> RelationshipOfPerson
+
+  <span class="codetip"><span><span class="keyword">delegate</span> _emailHelper <span class="keyword">represents</span> IEmailable</span><div class="tip">This is the Gosu delegate syntax. It allows you to delegate the implementation of an interface to a delegate variable. In this case, for most methods on IEmailable, the class calls out to the object in the _emailHelper variable. The exception is the getEmailName() method, which is defined below.</div></span>
+
+  <span class="codetip"><span><span class="keyword">enum</span> Relationship {
+    FRIEND,
+    FAMILY,
+    BUSINESS_CONTACT
+  }</span><div class="tip">Enumerations allow you to define sets of values. In this case, the 'Relationship' enumeration has three values: FRIEND, FAMILY, and 
+  BUSINESS_CONTACT. Gosu enumerations are 100% compatible with Java enumerations.
+  </div></span>
+
+  <span class="codetip"><span><span class="code-comment">// Map of names to people</span></span><div class="tip">Gosu supports Java-style single line comments.</div></span>
+  <span class="codetip"><span><span class="keyword">static</span></span><div class="tip">Static variables are stored on the class itself, rather than on each instance of the class. This allows all instances of the class to share data.</div></span> <span class="keyword">var</span> <span class="codetip"><span>ALL_PEOPLE</span><div class="tip">Notice in this example that the static 'ALL_PEOPLE' variable does not explicitly declare a type. Because this variable has an initial value assigned to it, Gosu infers the type of ALL_PEOPLE to be the type of its inital value. In this case, the initial value is HashMap&lt;String,&nbsp;Person&gt;.<br/><br/>Generally, it is considered good form to give class variables an explicit type. In contrast, standard style for local variables is to omit an explicit type unless the variable has no initial value. </div></span> = <span class="codetip"><span><span class="keyword">new</span></span><div class="tip">As in many languages, create new objects with the 'new' keyword.</div></span> <span class="codetip"><span>HashMap&lt;String, Person&gt;()</span><div class="tip">Gosu supports a simplified version of generics. Generics are a way to abstract the behavior of a class to work with different types of objects, but to still retain type safety. There are no wildcards, and generic types are covariant, like Java arrays, which is usually what you want.</div></span>
+
+  <span class="codetip"><span><span class="code-comment">/* Constructs a new Person */</span></span><div class="tip">Gosu also supports Java-style multiline comments.</div></span>
+  <span class="codetip"><span><span class="keyword">construct</span></span><div class="tip">Constructors are functions that Gosu calls when any code creates new objects with the 'new' keyword. Declare a constructor with the 'construct' keyword. You can declare multiple constructor signatures, for example a no-argument constructor and also a constructor with specific arguments.</div></span>( <span class="codetip"><span>name : String</span><div class="tip">This is how parameters are defined in Gosu. Like with variable type declarations, type the name of the parameter, followed by a colon, then the type of the parameter.</div></span>, age : Integer, relationship : Relationship ) {
+    _name = name
+    _age = age<span class="codetip"><span></span><div class="tip">Omit semicolons as line delimiters in most cases in Gosu. This is the standard Gosu style. Gosu supports semicolons as line delimiters, though, so you can use them when declaring blocks (closures) on one line.</div></span>
+    _relationship = relationship
+    <span class="codetip"><span>_emailHelper</span><div class="tip">Delegates are like class variables. You can reassign delegates to different objects whenever you like, so you can dynamically change implementations of interfaces.</div></span> = <span class="keyword">new</span> EmailHelper( <span class="keyword">this</span> )
+  }
+
+  <span class="codetip"><span><span class="keyword">property</span></span><div class="tip">This is the long-hand syntax for defining a property.</div></span> <span class="codetip"><span><span class="keyword">get</span></span><div class="tip">The 'get' keyword defines the property getter function. Note that there is a space between 'get' and 'Name'.</div></span> Name<span class="codetip"><span>()</span><div class="tip">Property getter functions do not take a parameter.</div></span>:<span class="codetip"><span>String</span><div class="tip">The return type of the property follows the parameters.</div></span>{
+    return _name
+  }
+
+  <span class="keyword">property</span> <span class="codetip"><span><span class="keyword">set</span></span><div class="tip">The 'set' keyword defines the property setter function.</div></span> Name<span class="codetip"><span>(name : String)</span><div class="tip">Property setters always take exactly one parameter.</div></span>{
+    _name = name
+  }
+
+  <span class="code-comment">/* Implement IEmailable#getEmailName() */</span>
+  <span class="codetip"><span><span class="keyword">override</span></span><div class="tip">The 'override' keyword indicates that this function overrides a function on its parent class or parent interface. In this example, it overrides (implements) the 'getEmailName()' function on the interface called IEmailable. By including the 'override' keyword, Gosu alerts you with a compilation error if the superclass or interface you extend changes in an unexpected way.</div></span> <span class="codetip"><span><span class="keyword">function</span></span><div class="tip">The 'function' keyword defines a new function (in an object, a function is known as a 'method').</div></span> getEmailName():<span class="codetip"><span>String</span><div class="tip">As with properties, the return type of the method follows the parameters.</div></span>{
+    return Name
+  }
+
+  <span class="keyword">function</span> incrementAge() {
+    <span class="codetip"><span>_age++</span><div class="tip">Gosu allows you to use arithmetic operators on the common extensions of java.math.Number. This example increments the field '_age', which has the type 'java.lang.Integer'. You can also use comparison operators like '&lt;' and '&gt;' on anything that implements java.lang.Comparable.</div></span>
+  }
+
+  <span class="codetip"><span>@Deprecated</span><div class="tip">Gosu supports Java annotations and provides its own more flexible annotation system.</div></span>
+  <span class="keyword">function</span> printPersonInfo() {
+    <span class="codetip"><span>print</span><div class="tip">print() is the one truly global function in Gosu. You can use it to print messages to the console, just like the Java code 'System.out.println()'.</div></span>( <span class="codetip"><span><span class="code-string">"Person { Name : ${</span>Name<span class="code-string">}, Age : ${</span>Age<span class="code-string">}, Relationship : ${</span>RelationshipOfPerson<span class="code-string">} }"</span></span><div class="tip">This is an example of a String template. You can use the syntax '${EXPRESSION}' to embed values in a string. Of course, you can also simply use the '+' operator to concatenate String values instead.</div></span> )
+  }
+
+  <span class="codetip"><span><span class="keyword">static</span></span><div class="tip">Methods can be static too.</div></span> <span class="keyword">function</span> addPerson(p : Person){
+    <span class="keyword">if</span>(ALL_PEOPLE.containsKey(<span class="codetip"><span>p?.Name</span><div class="tip">To access a property, just use a period between the object and the property name. In Gosu, many operators can be prefixed with a question mark, '?' and made null tolerant. This means that if 'p' has the value null, this expression does <b>not</b> throw a NullPointerException. Rather, the entire expression evaluates to null. </div></span>)) {
+      <span class="codetip"><span><span class="keyword">throw</span></span><div class="tip">You can throw exceptions with the 'throw' keyword. Gosu does not have checked exceptions, so there is no need to declare exceptions in a method signature.</div></span> <span class="keyword">new</span> IllegalArgumentException( <span class="code-string">"There is already someone named '${</span>p.Name<span class="code-string">}'."</span> )
+    }
+    <span class="codetip"><span>ALL_PEOPLE[p.Name]</span><div class="tip">You can use array-like syntax to access both Map and List objects in Gosu. Here we are using this syntax to insert the person into the map.</div></span> = p
+  }
+
+  <span class="keyword">static</span> <span class="keyword">function</span> addAllPeople( contacts : List&lt;Contact&gt; ) {
+    <span class="codetip"><span><span class="keyword">for</span>( contact <span class="keyword">in</span> contacts )</span><div class="tip">The 'for' loop iterates over all of the items in a collection (really, any Iterable object) or an array. The loop is null safe. If the 'contacts' parameter is null, Gosu simply skips this loop rather than throwing an exception. Gosu also has the standard 'while' and 'do/while' loops.</div></span> {
+      <span class="keyword">if</span>( <span class="codetip"><span>contact <span class="keyword">typeis</span> Person</span><div class="tip">The 'typeis' operator allows you to test the type of an object. It is similar to the Java operator 'instanceof', but works with the Gosu type system rather than the Java type system. In this case, the 'typeis' operator returns true if the contact is a Person (rather than, say, a Company).</div></span> <span class="codetip"><span><span class="keyword">and</span> <span class="keyword">not</span></span><div class="tip">For logical expressions, Gosu supports both C-style '&&', '||', and '!' operators, as well as the English words 'and', 'or', and 'not' for more readable code.</div></span> ALL_PEOPLE.containsKey( contact.Name )) {
+        addPerson( <span class="codetip"><span>contact</span><div class="tip">Notice that the code does not explicitly downcast the 'contact' variable before calling the addPerson() method. This is because Gosu automatically downcasts variables and properties after a call to the 'typeis' operator in an 'if' statement or similar structures. While this is not strictly type safe, it is usually what you want in typical code.</div></span> )
+      }
+    }
+  }
+
+  <span class="keyword">static</span> <span class="keyword">function</span> getAllPeopleOlderThanNOrderedByName( age : <span class="codetip"><span>int</span><div class="tip">Gosu supports Java primitive types.</div></span> ) {
+    <span class="keyword">var</span> <span class="codetip"><span>allPeople</span><div class="tip">Note that this local variable does not have an explicit type, but Gosu infers the type. </div></span> = ALL_PEOPLE.<span class="codetip"><span>Values</span><div class="tip">Java style getter and setter methods on Java classes (getX() and setY(obj)) automatically convert to properties in Gosu. In this case, the getValues() method on Map has been turned into the 'Values' property. Because this is a Map of String objects to Person objects, the return type of this property is Collection&lt;Person&gt;.</div>
+</span>
+    <span class="keyword">return</span> allPeople.<span class="codetip"><span>where</span><div class="tip">This example uses the where() method on the class java.util.Collection. This method is not on the original Java class. It is a method added in a Gosu enhancement on the java.util.Collection type. Gosu enhancements allow you to, with some restrictions, add new methods and properties to existing types. This specific enhancement method called where() filters a list given a condition, expressed as a block.</div></span>( <span class="codetip"><span>\ p -> p.Age > age</span><div class="tip">This is a block, also called a closure. Think of a block as a small function definition that you can pass to other methods. This is similar to some uses of Java anonymous one-method classes.<br/> <br/> A block starts with a '\', followed by the parameters of the function, then a right arrow '->' and then the body of the block. The body of this block compares the age of the person (parameter 'p') with the 'age' parameter passed in. </div></span> ).<span class="codetip"><span>orderBy</span><div class="tip">orderBy() is another enhancement method. It orders the Collection object by the given block. There are many, many useful enhancement methods on the core Java classes.</div></span>( \ p -> p.Name )
+  }
+
+  <span class="keyword">static</span> <span class="keyword">function</span> loadPersonFromDB( id : Integer ) {
+    <span class="codetip"><span><span class="keyword">using</span></span><div class="tip">The 'using' statement guarantees that resources close and finish cleanly without writing tedious try/finally code. Gosu ensures that every variable in a 'using' statement declaration cleans up at the end of the 'using' statement without additional code.<br/><br/>In this case, some code loads a person from a database using the Java JDBC API. The Connection 'conn' and PreparedStatement 'stmt' automatically close at the end of the 'using' statement. You do not have to worry about writing explicit code to clean them up. </div></span>( <span class="keyword">var</span> conn = DBConnectionManager.getConnection(),
+      <span class="keyword">var</span> stmt = conn.prepareStatement( <span class="code-string">"SELECT name, age, relationship FROM PEOPLE WHERE ID=?"</span>) ){
+
+      stmt.setInt( 0, 0 )
+      <span class="keyword">var</span> result = stmt.executeQuery()
+      <span class="keyword">if</span>( result.next() ) {
+         addPerson( <span class="keyword">new</span> Person( result.getString( "name" ),
+                    <span class="codetip"><span>result.getInt( "age" )</span><div class="tip">Gosu supports autoboxing, which means to automatically convert primitive types to their object reference equivalents. In this case, getInt() returns an int, which Gosu converts to an Integer for the 'age' parameter.</div></span>,
+                    Relationship.valueOf( result.getString( "relationship" ) ) ) )
+
+      }
+    }
+  }
+
+  <span class="code-comment">/* Loads in people from a CSV */</span>
+  <span class="keyword">static</span> <span class="keyword">function</span> loadFromFile( file : File ) {
+    file.<span class="codetip"><span>eachLine</span><div class="tip">This is an enhancement method that allows you to process each line of a file with a Gosu block (a closure).</div></span>( \ <span class="codetip"><span>line</span><div class="tip">Gosu infers the tye of the 'line' parameter to be the type 'String'.</div></span> -> {
+      if( line.<span class="codetip"><span>HasContent</span><div class="tip">'HasContent' is an enhancement property on String that  determines if a string has any non-whitespace in it. Because it is a property, it is null safe. The 'HasContent' property returns false if the String is null, which is nice in typical coding. Notice that this is the reverse behavior of using string.IsEmpty(), which is a built-in Java method that is not null-safe.</div></span> ) {
+        addPerson( line.<span class="codetip"><span>toPerson()</span><div class="tip">This method converts a String to a Person. This method is an enhancement method on String. In other words, a Gosu enhancement lets you inject a new method (or property) onto types that would normally be final, even Java types.</div></span> )
+      }
+    })
+  }
+
+  <span class="code-comment">/* Save people to a CSV */</span>
+  <span class="keyword">static</span> <span class="keyword">function</span> saveToFile( file : File ) {
+    <span class="codetip"><span><span class="keyword">using</span></span><div class="tip">This example shows how the 'using' statement can clean up a FileWriter object.</div></span>( <span class="keyword">var</span> writer = <span class="keyword">new</span> FileWriter( file ) ) {
+      print( <span class="codetip"><span>PersonCSVTemplate</span><div class="tip">This is a Gosu template, which generates a large String. It is similar to JSP or other standard templating systems. Templates integrate directly into the language and you can invoke them either with the renderToString() method or the render() method. See later in this file for the definition of this template.</div></span>.renderToString( ALL_PEOPLE.Values ) )
+      PersonCSVTemplate.render( writer, ALL_PEOPLE.Values )
+    }
+  }
+}
+</pre>
+
+<h2>Gosu Enhancements</h2>
+
+<p>An enhancement allows you to add new features to existing types.</p>
+
+<pre class="code">
+<span class="codetip"><span><span class="keyword">package</span> example</span><div class="tip">Gosu enhancements have packages to define their namespaces, just like classes. The file for this enhancement would be at the path example/PersonStringEnhancement.gsx. ('.gsx' is the file extension for enhancements.)</div></span>
+
+<span class="codetip"><span><span class="keyword">enhancement</span> PersonStringEnhancement</span><div class="tip">Declare an enhancements with the 'enhancement' keyword.</div></span> : <span class="codetip"><span>String</span><div class="tip">After a colon, add the type to which the enhancement adds methods and properties. Note that you can put methods and properties on parameterized versions of generic types, such as List&lt;String&gt;</div></span> {
+
+  <span class="keyword">function</span> <span class="codetip"><span>toPerson</span><div class="tip">This method now shows up on every instance of a String object in Gosu!</div></span>() : Person {
+     <span class="keyword">var</span> vals = <span class="codetip"><span><span class="keyword">this</span></span><div class="tip">'this' in an enhancement refers to the enhanced type, rather than the enhancement itself. In this case, 'this' refers to the String type.</div></span>.split(<span class="code-string">","</span>)
+     <span class="keyword">return</span> <span class="keyword">new</span> Person( vals[0], <span class="codetip"><span>vals[1] <span class="keyword">as</span> int</span><div class="tip">The 'as' keyword lets you convert or cast a value in Gosu. In this case, converting a value to an 'int' type.</div></span>, Relationship.valueOf( vals[2] ) ) )
+  }
+}
+</pre>
+
+<h2>Gosu Templates</h2>
+
+<p>This example shows a Gosu template. Templates are similar to to Java Server Pages (JSP), but they have a type safe API for rendering. Templates are generally available in Gosu and can optionally define parameters.</p>
+
+<pre class="code">
+&lt;%!-- <span class="codetip"><span><span class="code-comment">defined in example/PersonCSVTemplate.gst</span></span><div class="tip">Gosu templates file end with the 'gst' extension. They do not have a 'package' statement. Instead, Gosu infers the package from the location of the template file in the file system hierarchy.</div></span> --%&gt;
+
+&lt;%@ <span class="codetip"><span><span class="keyword">params</span>( users : Collection &lt;User> )</span><div class="tip">The 'params' directive specifies the parameters for a template. The 'render' methods on the template class as it appears in Gosu contain these parameters.</div></span> %&gt;
+
+&lt;%  <span class="codetip"><span><span class="keyword">for</span>( user <span class="keyword">in</span> users ) {</span><div class="tip">This shows a Gosu statement inside a template. Statements start with '&lt;%' and end with '%&gt;'. In this case, it iterates across all the users (a template parameter) and creates a comma-spearated value (CSV) line for each user.</div></span> %&gt;
+
+<span class="codetip"><span>${user.LastName}</span><div class="tip">You can insert a string value into the template with the ${} syntax. You can also use the longer JSP-like '&lt;%=', '%&gt;' syntax.</div></span>, ${user.FirstName}, ${user.Department}  <span class="codetip"><span>&lt;%  } %&gt;</span><div class="tip">This example closes  the 'for' loop on this line to avoid multiple new lines per person, since there is a new line after the 'for' loop on the line above.</div></span>
+</pre>
+
+<h2>Gosu Programs</h2>
+
+<p>Use a Gosu program to write small scripts or to launch larger Gosu applications (such as calling other Gosu classes). There is no main() method in Gosu like there is in Java. Instead, write a Gosu program that starts your entire application.</p>
+
+<p>Programs are written files with the extension .gsp. Launch a Gosu program with the Gosu command line tool:  bin/gosu myprogram.gsp.</p>
+
+<pre class="code">
+<span class="codetip"><span><span class="keyword">classpath</span> <span class="code-string">"."</span></span><div class="tip">The 'classpath' keyword declares the class path that this program uses, embedded in the program itself. The location is a relative path, relative to the Gosu program. This helps you avoid requiring the user to pass in a complicated classpath, or requiring programmers to write a separate script to launch a Gosu program.</div></span>
+
+<span class="codetip"><span><span class="keyword">uses</span> gw.lang.cli.CommandLineAccess</span><div class="tip">Gosu programs can use other resources, just like Gosu classes can do. This example calls the gw.lang.cli.CommandLineAccess class, which provides access to additional command line arguments.</div></span>
+
+<span class="keyword">uses</span> gw.util.Shell
+
+<span class="keyword">var</span> args = CommandLineAccess.<span class="codetip"><span>getRawArgs</span><div class="tip">This method returns a list of the arguments passed to this program. Alternatively, use CommandLineAccess to reflectively populate an object with the passed-in arguments using its initialize() methods. This approach is useful for more complicated scripts and applications.</div></span>()
+
+<span class="keyword">if</span>( args.<span class="codetip"><span>Count</span><div class="tip">In Gosu, the 'Count' property exists on all  Arrays, collections, and maps as a standard way to determine the size of them.</div></span> == 0 ) {
+  print( <span class="code-string">"You passed in zero arguments"</span> )
+} <span class="keyword">else</span> {
+  <span class="keyword">var</span> cmdLine = args.<span class="codetip"><span>join( " " )</span><div class="tip">The join() method is an enhancement on collections and arrays that joins all elements of the Collection or Array together with a specified String in between them.</div></span>
+  print( "Executing '${cmdLine}'" )
+  <span class="codetip"><span>Shell.exec( cmdLine )</span><div class="tip">The gw.util.Shell class provides a way to interact with the command line system. Shell.exec() executes the given command as if it ran from the command line, so be careful with it.</div></span>
+}
+</pre>
+
+</div>
+                    
+<!--#include virtual="footer.html" -->
+
+</body>
+<SCRIPT>setNav('documentation');</SCRIPT>
+</html>

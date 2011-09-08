@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <title>The Eclipse Plugin for Gosu</title>
+  <link rel="stylesheet" type="text/css" href="gosu.css"/>
+  <SCRIPT language="JavaScript" SRC="javascript/javascript.js"></SCRIPT>
+</head>
+
+<body>
+
+<!--#include virtual="header.html" -->
+
+      <h1>Eclipse plugin</h1>
+      <div>Integrate Gosu seamlessly into your development environment with the Gosu plugin for Eclipse.</div>
+      <h2>Installing the Gosu Eclipse plugin</h2>
+	  
+	  <p>For complete Eclipse plugin installation instructions, see <a href="doc/wwhelp/wwhimpl/api.htm?&context=gosu&src=getting-started-gosu-opensource&topic=Installing_the_Eclipse_Gosu_Editor_Plugin">the Gosu documentation Eclipse plugin section</a>.
+
+<p>You may also want to browse the <a href="doc/wwhelp/wwhimpl/api.htm?&context=gosu&src=intro&topic=Welcome_to_Gosu">complete introduction to the Gosu language</a>.
+
+<!--#include virtual="footer.html" -->
+
+</body>
+<SCRIPT>setNav('download');</SCRIPT>
+</html>
+

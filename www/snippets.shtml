@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <title>Some useful snippets and examples of Gosu</title>
+  <link rel="stylesheet" type="text/css" href="gosu.css"/>
+  <SCRIPT language="JavaScript" SRC="javascript/javascript.js"></SCRIPT>
+</head>
+
+<body>
+<!--#include virtual="header.html" -->
+
+<h1>Collections</h1>
+
+<h2>Sorting Lists</h2>
+<pre class="code">
+<span class="keyword">var</span> listOfStrings = {<span class="code-string">"cat"</span>, <span class="code-string">"dog"</span>, <span class="code-string">"bird"</span>}
+
+<span class="keyword">var</span> naturallyOrdered = listOfStrings.order()
+
+<span class="keyword">var</span> orderedByLength = listOfStrings.orderBy( \ s -> s.length() )
+</pre>
+
+<h1>IO</h1>
+
+<h2>Reading a File</h2>
+<pre class="code">
+<span class="keyword">var</span> file = new File( <span class="code-string">"someFile.txt"</span> )
+
+<span class="keyword">var</span> contents = file.read()
+</pre>
+
+<h2>Writing a File</h2>
+<pre class="code">
+<span class="keyword">var</span> file = new File( <span class="code-string">"someFile.txt"</span> )
+
+file.write( <span class="code-string">"That was easy"</span> )
+</pre>
+
+<!--#include virtual="footer.html" -->
+
+</body>
+<SCRIPT>setNav('documentation');</SCRIPT>
+</html>

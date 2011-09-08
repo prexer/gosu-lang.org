@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root" type="tRoot"/>
+  <xs:complexType name="tRoot">
+    <xs:sequence>
+      <xs:element name="child" type="tChild"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="tChild">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="value1"/>
+      <xs:enumeration value="value2"/>
+      <xs:enumeration value="value3"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

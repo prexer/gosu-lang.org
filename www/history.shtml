@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <title>History of Gosu</title>
+  <link rel="stylesheet" type="text/css" href="gosu.css"/>
+  <SCRIPT language="JavaScript" SRC="javascript/javascript.js"></SCRIPT>
+</head>
+
+<body>
+
+<!--#include virtual="header.html" -->
+
+      <h1>History of Gosu</h1>
+	  
+	  <h2>From a conversation with Scott McKinney</h2>
+      <p>Gosu began way back in 2002, before most other JVM languages.  In fact Gosu didn't begin as an all-purpose programming language like it is today.  It started as a small scripting language to satisfy our need for an embeddable, statically-typed language for writing business rules.  From there Gosu evolved to satisfy new requirements as we developed our suite of highly configurable enterprise applications.</p>
+	  
+	  <p>Some years later Guidewire needed to enhance our web framework to make it more testable than Struts and Tiles.  We wanted to treat widgets on the pages as full-fledged objects, and to type-safely pass arguments from one page to another, instead of inserting them in the HttpRequest and hoping for the best. By making the Gosu type system even more flexible, each page in the UI became a type. We could add an entry signature to that page which defined the objects it was expecting to be passed, and enforce this expectation at compile time. So Gosu gained a flexible type system that could reflect and enforce configuration changes in a type-safe manner, and this enabled a whole new set of features to increase our user's productivity. Along with static typing and type inference, the extensible type system gives customers real-time feedback as they quickly and safely configure their Guidewire applications.</p>
+
+	  <p>Our internal application development teams also started seeing some major productivity advantages when using Gosu over Java, especially with the new typeloaders that we added for XML types.  Based on feedback we got from dozens of customers and our application developers, the Gosu language team carefully added pragmatic new features to help make their work easier.  Ruby, Clojure, and C# all had good ideas, and we borrowed from them.</p>
+	  
+	  <p>A couple of years ago, we started thinking that it would be good to release Gosu to the community.  Not just because we thought we had a cool new language, but also because we felt there was a vacuum in the language space.  At first we tossed the idea around casually, and then in 2009 we started discussing it with our management team.  Things in the Insurance industry are conservative and cautious, so the release has taken a little longer than we would have liked, but we're happy to see it generating healthy discussion among language aficionados. </p>
+	  
+	  <p>Additional thoughts from another of the language's contributors, Alan Keefer, are in his blog post <a href="http://guidewiredevelopment.wordpress.com/2010/11/11/why-gosu/">Why Gosu?</a></p>
+      
+<!--#include virtual="footer.html" -->
+
+</body>
+<SCRIPT>setNav('download');</SCRIPT>
+</html>
+

@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <title>Gosu Schedule and rough Roadmap</title>
+  <link rel="stylesheet" type="text/css" href="gosu.css"/>
+  <SCRIPT language="JavaScript" SRC="javascript/javascript.js"></SCRIPT>
+</head>
+
+<body>
+<!--#include virtual="header.html" -->
+      <h1>Schedule and rough roadmap</h1>
+<h2>
+<ul>
+  <li style="padding:16px">website src on github - Sep, 2011</li>
+  <li style="padding:16px">maven repo for past builds</li>
+  <li style="padding:16px">nightly builds</li>
+  <li style="padding:16px">IntelliJ plugin - target Jan-Feb 2012</li>
+  <li style="padding:16px">release zip of src - Mar, 2012</li>
+  <li style="padding:16px">build-script for src - May, 2012</li>
+  <li style="padding:16px">publish src on github - July, 2012</li>
+  <li style="padding:16px">Eclipse plugin - TBD</li>
+</ul>
+
+<!--#include virtual="footer.html" -->
+</body>
+<SCRIPT>setNav('about');</SCRIPT>
+</html>

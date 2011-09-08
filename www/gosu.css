@@ -1,0 +1,306 @@
+html {
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  background-image: url(images/body_bg.gif);
+  background-repeat: repeat-x;
+  background-position: top;
+  width: 100%;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+#content {
+	margin-top: 40px;
+}
+
+#leftNav {
+	width: 200px;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+#navArea {
+	padding-top: 16px;
+}
+
+.navItem_on {
+	background-color: #C1BDAE;
+	color: #2C2C2C;
+	font-weight: bold;
+	margin-bottom: 5px;
+	padding: 5px 5px 5px 10px;
+}
+
+.navItem {
+	background-color: #D3CFC0;
+	color: #2C2C2C;
+	font-weight: bold;
+	margin-bottom: 5px;
+	padding: 5px 5px 5px 10px;
+}
+
+.subNav {
+	font-weight: normal;
+	padding-top: 4px;
+}
+
+.subNavItem {
+	background-image: url(images/bullet_square.gif);
+	background-position: top left;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	padding-top: 2px;
+	padding-bottom: 4px;
+}
+
+#navArea a {
+	color: #2C2C2C;
+	text-decoration: none;
+}
+
+
+
+.navItem .subNav {
+/*	display: none; */
+}
+
+.navItem_on .subNav {
+	display: block;
+}
+
+#maincontent {
+	padding-right: 10px;
+	height:100%;
+}
+
+#mainPanel {
+	margin-bottom: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height:100%;
+}
+
+#mainPanel tr.top td.left, #mainPanel tr.top td.right, #mainPanel tr.bottom td.left, #mainPanel tr.bottom td.right {
+	height: 14px;
+	width: 14px;
+	background-repeat: no-repeat;
+	padding: 0px;
+}
+
+#mainPanel tr.middle td.left, #mainPanel tr.middle td.right {
+	width: 14px;
+	background-position: left;
+	background-repeat: repeat-y;
+	padding: 0px;
+}
+
+#mainPanel tr.top td.center, #mainPanel tr.bottom td.center {
+	height: 14px;
+	background-position: top;
+	background-repeat: repeat-x;
+	padding: 0px;
+}
+
+#mainPanel tr.middle td.center {
+	vertical-align: text-top;
+	background-color: #ffffff;
+}
+
+#mainPanel tr.top td.left {
+	background-image: url(images/mainPanel_tl.png);
+}
+
+#mainPanel tr.top td.center {
+	background-image: url(images/mainPanel_tc.png);
+}
+
+#mainPanel tr.top td.right {
+	background-image: url(images/mainPanel_tr.png);
+}
+
+#mainPanel tr.middle td.left {
+	background-image: url(images/mainPanel_ml.png);
+}
+
+#mainPanel tr.middle td.right {
+	background-image: url(images/mainPanel_mr.png);
+}
+
+#mainPanel tr.bottom td.left {
+	background-image: url(images/mainPanel_bl.png);
+}
+
+#mainPanel tr.bottom td.center {
+	background-image: url(images/mainPanel_bc.png);
+}
+
+#mainPanel tr.bottom td.right {
+	background-image: url(images/mainPanel_br.png);
+}
+
+
+
+
+table * {
+  font-size: 12px;
+}
+
+a {
+  color: #841010;
+}
+
+a:hover {
+  color: #CA0303;
+}
+
+img {
+  border: none;
+}
+
+ul {
+  list-style-image: url(images/bullet_square.gif);
+}
+
+h1 {
+  color: #3E3E3E;
+  font-size: 28px;
+  font-weight: normal;
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+  margin-top: 0px;
+}
+
+.code {
+  font-size: 12px;
+  line-height: 1.3;
+  border: 1px solid #D8D8D8;
+  background: #F9F9F9;
+  padding:16px;
+  margin:16px;
+}
+
+.code-comment {
+  color: gray;
+}
+
+.code-string {
+  color: green;
+}
+
+.keyword {
+  font-weight: bold;
+  color: blue;
+}
+
+span.codetip {
+  position: relative;
+  z-index: 24;
+}
+
+span.codetip span {
+  background-color: #DFEAFF;
+  padding-left: 1px;
+  padding-right: 1px;
+  cursor: default;
+}
+
+span.codetip:hover, span.codetip.hover {
+  z-index: 25;
+}
+
+span.codetip:hover span, span.codetip.hover span {
+  background-color: #A5CBFE;
+}
+
+span.codetip div.tip {
+  display: none;
+  position: absolute;
+  white-space: normal;
+  width: 300px;
+  top: 1.5em;
+  font-family: verdana;
+  font-weight: normal;
+  font-size: 13px;
+  left: 2em;
+  padding: 5px;
+  border: 1px solid #D3D3D3;
+  background-color: #FFFFC9;
+  color: #000;
+}
+
+span.codetip:hover div.tip, span.codetip.hover div.tip {
+  display: block;
+}
+
+span.codetip, span.codetip span {
+  display: inline-block;
+}
+
+th {
+	text-align: left;
+}
+
+td {
+	padding: 3px;
+}
+
+
+/* These styles are for the table on comparisons.shtml. */
+
+.comparison td {
+	background-image: url(images/row_bg.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+	background-color: #D6D6D6;
+	border-bottom: 1px #ABABAB solid;
+	text-align: center;
+} 
+
+.comparison tr td, .comparison tr th {
+	padding: 10px 6px 10px 6px;
+	border-right: 2px #ffffff solid;
+}
+
+.comparison td.category {
+	text-align: left;
+	font-weight: bold;
+}
+
+.comparison tr th {
+	background-color: #808080;
+	text-align: center;
+	color: #ffffff
+}
+
+.comparison tr th.gosuColumn {
+	background-color: #6B8BC8;
+}
+
+.comparison td.gosuColumn {
+	background-image: url(images/row_bg_selected.gif);
+	background-color: #C0C9DA;
+}
+
+.comparison .footnote {
+	color: #333333;
+	vertical-align: top;
+}
+
+/* Links page */
+
+ul.links li {
+	padding-bottom: 10px;
+}
+
+.linkName {
+	font-weight: bold;
+}
+
+.linkDescription {
+	padding-top: 4px;
+}
+
+

@@ -1,0 +1,1725 @@
+<html>
+<head>
+  <title>The Gosu Programming Language</title>
+  <link rel="stylesheet" type="text/css" href="gosu.css"/>
+  <link rel="stylesheet" type="text/css" href="gosu-spec.css"/>
+  <SCRIPT language="JavaScript" SRC="javascript/javascript.js"></SCRIPT>
+  <SCRIPT language="JavaScript">
+    var tab = "spec";
+  </SCRIPT>
+</head>
+<body>
+<!--#include virtual="header.html" -->
+
+      <h1>Spec</h1>
+
+<div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Introduction</div></h1></div>
+<div class='spec-para'>
+</div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Lexical structure</div></h1></div>
+<div class='spec-para'>
+</div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Basic concepts</div></h1></div>
+<div class='spec-para'>
+</div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Types</div></h1></div>
+<div class='spec-para'>
+</div><a name='core_types_primitive'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Primitive types</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_types_primitive_integral'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Integral types</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_types_primitive_floating'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Floating point types</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_types_primitive_bool'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The boolean type</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_types_primitive_char'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The char type</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_types_object'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Object types</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_types_object_classes'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Class types</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_types_object_ifaces'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Interface types</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_types_object_arrays'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Array types</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_types_object_blocks'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Block types</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_types_boxing'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Boxing and unboxing</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_types_typeparams'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Type parameters</div></h2></div>
+<div class='spec-para'>
+</div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Variables</div></h1></div>
+<div class='spec-para'>
+</div><a name='core_variables_categories'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Variable categories</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_variables_categories_static'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Static variables</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_variables_categories_instance'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Instance variables</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_variables_categories_arrays'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Array elements</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_variables_categories_local'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Local variables</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_variables_defaults'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Default values</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_variables_inference'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Variable type inference</div></h2></div>
+<div class='spec-para'>
+</div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Conversions</div></h1></div>
+<a name='core_conversions_overview'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Overview</div></h2></div>
+<div class='spec-para'>
+In Gosu, there are two ways to convert an expression of type T to type Q: casts and
+          coercions. These concepts are similar to the concept of &quot;conversions&quot; and &quot;promotions&quot; as
+          defined by Chapter 5 of the Java Language Specification (<span class='spec-abbrev'>JLS</span>).</div><div class='spec-para'>
+Both casts and coercions, when they are explicit (see below) use the <span class='spec-code'>as</span>
+          keyword. Given a root expression <span class='spec-code'>expr<span class='spec-subscript'>T</span></span>of type T, and a
+          target type Q, a cast or coercion takes the following form:</div><div class='spec-para'>
+<div class='spec-programlisting'>
+<span class='spec-emphasis'>expr</span><span class='spec-subscript'>T</span> as Q </div></div><div class='spec-para'>
+Gosu, like Java, does not make a syntactic distinction between the two
+          operations.</div><div class='spec-para'>
+A <span class='spec-glossterm'>
+cast</span> is defined as a runtime check that the expression of
+          type T is indeed of type Q, with a 
+          exception thrown if the value of the expression is not of type Q. The result of a cast the
+          same value as the root expression, but the static type of the value is set to Q.</div><div class='spec-para'>
+A <span class='spec-glossterm'>
+coercion</span> is defined as a transformation from one type to
+          another type that the runtime itself provides, without the need to invoke a method. It can
+          be thought of as a generalization of Java's auto-boxing functionality. Here is an example
+          of an <span class='spec-code'>int</span> being coerced to a
+          <span class='spec-code'>double</span>:<div class='spec-programlisting'>
+  var dbl = 1 as double</div> In the above
+          code, the runtime representation of a primitive integer is converted into that of a double
+          (with possible loss of precision.)</div><a name='core_conversions_overview_details'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Coercion Details</div></h3></div>
+<div class='spec-para'>
+In Gosu, coercions can apply to any types; they are not restricted solely to
+            auto-boxing. At compile time a coercer starts with an initial type and produces a
+            coerced type. At runtime a coercer begins with an initial value and produces a coerced
+            value.</div><div class='spec-para'>
+Coercions come in two flavors: implicit and explicit coercions.</div><a name='core_conversions_overview_details_implicit'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Implicit Coercions</div></h4></div>
+<div class='spec-para'>
+Implicit coercions occur automatically, without any explicit direction from the
+              programmer. An example of an implicit coercion is the coercion from <span class='spec-code'>int</span>
+              to <span class='spec-code'>java.lang.Integer</span>:</div><div class='spec-programlisting'>
+  function( i : java.lang.Integer ) {
+    print( i )
+  }
+
+  print( 42 )</div><div class='spec-para'>
+No explicit coercion is necessary in the above code because the <span class='spec-code'>int</span>
+              to <span class='spec-code'>java.lang.Integer</span> is implicit. Implicit coercions are typically cases
+              where the two distinct types are very similar or symmetric in a way such that
+              conversion between them is so natural as to go unnoticed. This is in contrast with a
+              lossy coercion, discussed below.</div>  </div><a name='core_conversions_overview_details_explicit'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Explicit Coercions</div></h4></div>
+<div class='spec-para'>
+Explicit coercions must be explicitly invoked by the programmer via the
+                <span class='spec-code'>as</span> keyword. An example of an explicitly coercion is the coercion from
+                <span class='spec-code'>double </span>to <span class='spec-code'>int</span>:</div><div class='spec-programlisting'>
+  function( i : int ) {
+    print( i )
+  }
+
+  print( 42.0 as int )</div><div class='spec-para'>
+The <span class='spec-code'>double</span> to <span class='spec-code'>int</span> coercion is a <span class='spec-glossterm'>
+lossy
+                coercion</span>, because some information may be lost when doing the
+              conversion. Therefore the coercion requires the explicit indication by the programmer
+              that they indeed want the conversion to occur.</div>  </div><a name='core_conversions_overview_details_priority'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Method Overloading and Coercion Priority</div></h4></div>
+<div class='spec-para'>
+Implicit coercions are considered when determining which method to invoke during
+              method resolution of overloaded methods. In order to give some coercions higher
+              precedence, coercions have a priority between 0 and 16 that can be used to indicated
+              how &quot;strong&quot; the coercion is. The higher the priority, the more that coercion will be
+              favored when resolving overloaded methods.</div><div class='spec-para'>
+Auto-boxing coercions are very high priority, while most
+              other coercions are low priority.</div>  </div><a name='core_conversions_overview_details_nullhandling'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Null Handling</div></h4></div>
+<div class='spec-para'>
+Some coercions to not handle the null value directly and instead rely no the
+              runtime to handle it. </div>  </div><a name='core_conversions_overview_details_typeresolving'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Type Resolving Coercers</div></h4></div>
+<div class='spec-para'>
+Some coercers pass type information through their coercion site in order to
+              facilitate type inference. The Gosu compiler will ask the coercer to translate the
+              initial type into a version of the coerced type.</div><div class='spec-para'>
+An example of a coercion like this is the Type to Class coercion, discussed  <a class='spec-link' href='#core_conversions_default_typetoclass'>
+below </a>.</div>  </div>  </div>  </div><a name='core_conversions_default'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Default Coercions</div></h2></div>
+<span class='spec-annotation'><div class='spec-para'>
+notest</div></span><div class='spec-para'>
+The following coercions are defined in the standard Gosu runtime</div><a name='core_conversions_default_nullcoercion'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Null Coercion</div></h3></div>
+<div class='spec-para'>
+All reference values are coercible to the Null type, and all values are coercible
+            from the Null type. This is a implicit coercion. </div>  </div><a name='core_conversions_default_nonlossy'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Primitive Non-Lossy Coercions</div></h3></div>
+<div class='spec-para'>
+The following coercions are non-lossy (no data is lost when the occur) and are
+            implicit:</div><div class='spec-table'>
+<div class='spec-title'>
+Widening Coercions</div><div class='spec-tgroup'>
+ <table class='spec-tbody'>
+<tr class='spec-row'><td class='spec-entry'><span class='spec-emphasis'>Primitive Type</span></td><td class='spec-entry'><span class='spec-emphasis'>Supported Widening Coercions</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>boolean</span></td><td class='spec-entry'>none</td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>byte</span></td><td class='spec-entry'><span class='spec-code'>char, short, int, long</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>char</span></td><td class='spec-entry'><span class='spec-code'>short, int, long</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>short</span></td><td class='spec-entry'><span class='spec-code'>int, long</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>int</span></td><td class='spec-entry'><span class='spec-code'>long</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>long</span></td><td class='spec-entry'>none</td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>float</span></td><td class='spec-entry'><span class='spec-code'>double</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>double</span></td><td class='spec-entry'>none</td></tr> </table></div></div>  </div><a name='core_conversions_default_lossy'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Primitive Lossy Coercions</div></h3></div>
+<div class='spec-para'>
+Beyond the specific implicit coercions listed above, all primitives may be coerced
+            to one another explicitly. These coercions may result in a loss of data since, for
+            example, an <span class='spec-code'>int</span> cannot hold all the values that a <span class='spec-code'>long</span> can
+            hold.</div>  </div><a name='core_conversions_default_autoboxing'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Auto-boxing Coercions</div></h3></div>
+<div class='spec-para'>
+All primitives are coercible to their reference equivalent. The table below
+            specifies what the boxing coercion is for each primitive type.</div><div class='spec-table'>
+<div class='spec-title'>
+Auto-boxing Coercions</div><div class='spec-tgroup'>
+ <table class='spec-tbody'>
+<tr class='spec-row'><td class='spec-entry'><span class='spec-emphasis'>Primitive Type</span></td><td class='spec-entry'><span class='spec-emphasis'>Coercion</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>boolean</span></td><td class='spec-entry'>Converts a <span class='spec-code'>boolean</span> value to a <span class='spec-code'>java.lang.Boolean</span>
+                    via <span class='spec-code'>Boolean.valueOf()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>byte</span></td><td class='spec-entry'>Converts a <span class='spec-code'>byte</span> value to a <span class='spec-code'>java.lang.Byte</span> via
+                      <span class='spec-code'>Byte.valueOf()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>char</span></td><td class='spec-entry'>Converts a <span class='spec-code'>char</span> value to a <span class='spec-code'>java.lang.Character</span>
+                    via <span class='spec-code'>Character.valueOf()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>short</span></td><td class='spec-entry'>Converts a <span class='spec-code'>short</span> value to a <span class='spec-code'>java.lang.Short</span> via
+                      <span class='spec-code'>Short.valueOf()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>int</span></td><td class='spec-entry'>Converts an <span class='spec-code'>int</span> value to an <span class='spec-code'>java.lang.Integer</span> via
+                      <span class='spec-code'>Integer.valueOf()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>long</span></td><td class='spec-entry'>Converts a <span class='spec-code'>long</span> value to a <span class='spec-code'>java.lang.Long</span> via
+                      <span class='spec-code'>Long.valueOf()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>float</span></td><td class='spec-entry'>Converts a <span class='spec-code'>float</span> value to a <span class='spec-code'>java.lang.Float</span> via
+                      <span class='spec-code'>Float.valueOf()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>double</span></td><td class='spec-entry'>Converts a <span class='spec-code'>double</span> value to a <span class='spec-code'>java.lang.Double</span> via
+                      <span class='spec-code'>Double.valueOf()</span></td></tr> </table></div></div><div class='spec-para'>
+These are implicit coercions.</div>  </div><a name='core_conversions_default_unboxing'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Unboxing Coercions</div></h3></div>
+<div class='spec-para'>
+All reference types with corresponding primitive types are coercible to those
+            primitive.</div><div class='spec-table'>
+<div class='spec-title'>
+Unboxing Coercions</div><div class='spec-tgroup'>
+ <table class='spec-tbody'>
+<tr class='spec-row'><td class='spec-entry'><span class='spec-emphasis'>Reference Type</span></td><td class='spec-entry'><span class='spec-emphasis'>Coercion</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>java.lang.Boolean</span></td><td class='spec-entry'>Converts a <span class='spec-code'>java.lang.Boolean</span> value to a <span class='spec-code'>boolean</span>
+                    via <span class='spec-code'>Boolean.booleanValue()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>java.lang.Byte</span></td><td class='spec-entry'>Converts a <span class='spec-code'>java.lang.Byte</span> value to a <span class='spec-code'>byte</span> via
+                      <span class='spec-code'>Byte.byteValue()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>java.lang.Character</span></td><td class='spec-entry'>Converts a <span class='spec-code'>java.lang.Character</span> value to a <span class='spec-code'>char</span>
+                    via <span class='spec-code'>Character.charValue()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>java.lang.Short</span></td><td class='spec-entry'>Converts a <span class='spec-code'>java.lang.Short</span> value to a <span class='spec-code'>short</span> via
+                      <span class='spec-code'>Short.shortValue()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>java.lang.Integer</span></td><td class='spec-entry'>Converts an <span class='spec-code'>java.lang.Integer</span> value to an <span class='spec-code'>int</span> via
+                      <span class='spec-code'>Integer.intValue()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>java.lang.Long</span></td><td class='spec-entry'>Converts a <span class='spec-code'>java.lang.Long</span> value to a <span class='spec-code'>long</span> via
+                      <span class='spec-code'>Long.longValue()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>java.lang.Float</span></td><td class='spec-entry'>Converts a <span class='spec-code'>java.lang.Float</span> value to a <span class='spec-code'>float</span> via
+                      <span class='spec-code'>Float.floatValue()</span></td></tr><tr class='spec-row'><td class='spec-entry'><span class='spec-code'>java.lang.Double</span></td><td class='spec-entry'>Converts a <span class='spec-code'>java.lang.Double</span> value to a <span class='spec-code'>double</span> via
+                      <span class='spec-code'>Double.doubleValue()</span></td></tr> </table></div></div><div class='spec-para'>
+These are implicit coercions. </div>  </div><a name='core_conversions_default_transitive'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Transitive Primitive and Autoboxing/Unboxing Coercions</div></h3></div>
+<div class='spec-para'>
+All transitive combinations of primitives and autoboxing/unboxing coercions are
+            supported. If the underlying primitive coercion is implicit, then the transitive
+            coercion is implicit as well. So</div><div class='spec-para'>
+<div class='spec-programlisting'>
+function takesALong( val : java.lang.Long ) {
+  print( val )
+}
+
+takesALong( 42 )</div>does
+            not require an explicit coercion, because the <span class='spec-code'>int</span> is coerced to
+              <span class='spec-code'>long</span> implicitly, and then boxed implicitly. But</div><div class='spec-programlisting'>
+function takesALong( val : java.lang.Short ) {
+  print( val )
+}
+
+takesALong( 42 as java.lang.Short )</div><div class='spec-para'>
+does require an explicit coercion, since <span class='spec-code'>int</span> must be explicitly coerced
+            to <span class='spec-code'>short</span>.</div>  </div><a name='core_conversions_default_object'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Object Coercion</div></h3></div>
+<div class='spec-para'>
+All reference values are coercible to <span class='spec-code'>java.lang.Object</span> via an
+              <span class='spec-glossterm'>
+identity coercion</span>, where the value is not changed in any way.
+            This is an implicit coercion.</div><div class='spec-para'>
+All primitives are coercible to <span class='spec-code'>java.lang.Object</span> via the auto-boxing
+            mechanism. These are explicit coercions.</div>  </div><a name='core_conversions_default_string'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+String Coercion</div></h3></div>
+<div class='spec-para'>
+All reference and primitive values are coercible to <span class='spec-code'>java.lang.String</span>.
+            This is an explicit coercion. </div>  </div><a name='core_conversions_default_stringtochar'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+String to char Coercion</div></h3></div>
+<div class='spec-para'>
+A <span class='spec-code'>java.lang.String</span> can be coerced to a primitive <span class='spec-code'>char</span>.
+              </div>  </div><a name='core_conversions_default_objecttoimonitorlock'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Object to IMonitorLock Coercion</div></h3></div>
+<div class='spec-para'>
+In order to support the Java-style &quot;synchronized&quot; monitor locking technique with the
+            Gosu <span class='spec-code'>using</span> statement, an explicit coercion from all reference types to
+              <span class='spec-code'>gw.lang.IMonitorLock</span> exists. Here is an example
+            usage:<div class='spec-programlisting'>
+var x = &quot;Sample object&quot;
+
+using( x as gw.lang.IMonitorLock ) {
+  print( &quot;This code is protected by the monitor lock&quot; )
+}</div>This
+            technique is discussed in detail in the </div>  </div><a name='core_conversions_default_tobigdecimal'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+??? to BigDecimal Coercion</div></h3></div>
+<div class='spec-para'>
+Need subsections for primitives, reference types and dimensions?</div>  </div><a name='core_conversions_default_tobiginteger'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+??? to BigInteger Coercion</div></h3></div>
+<div class='spec-para'>
+Need subsections for primitives, reference types and dimensions?</div>  </div><a name='core_conversions_default_tonumber'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+??? to Number Coercion</div></h3></div>
+<div class='spec-para'>
+Need subsections for primitives, reference types and dimensions?</div>  </div><a name='core_conversions_default_typetoclass'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Type to Class Coercion</div></h3></div>
+<div class='spec-para'>
+There is an implicit coercion from Type&lt;Q&gt;  to Class&lt;T&gt;, if Q is an instance of IJavaType and T is
+            assignable from Q.</div><div class='spec-para'>
+</div><div class='spec-para'>
+In its implicit form, this coercion is a Type Resolving Coercer. Given an expression
+            of type Type&lt;Q&gt; that satisfies the above restriction with respect to some
+            Class&lt;T&gt;, the resulting type of the coercion will be Class&lt;Q&gt;, rather than
+            Class&lt;T&gt;. This helps facilitate type inference when invoking generic methods that
+            expect classes<span class='spec-code'>. </span></div><div class='spec-para'>
+A good example of this kind of method is
+              <span class='spec-code'>java.lang.Class#getAnnotation()</span>:<div class='spec-programlisting'>
+  var clazz = Class.forName( &quot;some.Class&quot; )
+  var annotation = clazz.getAnnotation( MyJavaAnnotation )</div>In
+            the above code the expression <span class='spec-code'>MyJavaAnnotation</span>, the argument to the
+              <span class='spec-code'>getAnnotation()</span> method, has type
+              <span class='spec-code'>Type&lt;MyJavaAnnotation&gt;</span>. The function <span class='spec-code'>getAnnotation()</span>
+            is generic and takes a single argument of type <span class='spec-code'>Class&lt;A&gt;</span>. Because the
+            Type to Class Coercion is a Type Resolving Coercer, the coercion informs the Gosu
+            compiler that the value it produces at this point is of type
+              <span class='spec-code'>Class&lt;MyJavaAnnotation&gt;</span> and thus <span class='spec-code'>annotation</span> has the
+            type <span class='spec-code'>MyJavaAnnotation</span>, through the usual type inference mechanism.</div>  </div><a name='core_conversions_default_blocktocompatible'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Block to Compatible Interface Coercion</div></h3></div>
+<div class='spec-para'>
+In Gosu a block B can be coerced to a compatible interface I, if the interface has
+            exactly one method defined on it that does not override a method already on
+              <span class='spec-code'>java.lang.Object</span>, the block's arguments are contravariant with respect to
+            that method's arguments, and the block's return type is covariant with respect to that
+            method's return type.</div><div class='spec-para'>
+This is an implicit coercion.</div><div class='spec-para'>
+This is also a Type Resolving coercer. Given a block with return type R, and a an
+            interface I with a single method whose return type S that is currently being inferred,
+            the resulting type of the coercion will the the interface I with S bound to R.</div>  </div><a name='core_conversions_default_blocktocoercible'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Block to Coercable Interface Coercion</div></h3></div>
+<div class='spec-para'>
+In Gosu a block B can be coerced to a compatible interface I, if the interface has
+            exactly one method defined on it that does not override a method already on
+              <span class='spec-code'>java.lang.Object</span>, the block's arguments are contravariant with respect to
+            that method's arguments, and the block's return type is <span class='spec-emphasis'>coercable</span>
+            to that method's return type.</div><div class='spec-para'>
+This is an implicit coercion.</div><div class='spec-para'>
+This is also a Type Resolving coercer. Given a block with return type R, and a an
+            interface I with a single method whose return type S that is currently being inferred,
+            the resulting type of the coercion will the the interface I with S bound to R.</div>  </div><a name='core_conversions_default_interfacetocompatible'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Interface to Compatible Block Coercion</div></h3></div>
+<div class='spec-para'>
+In Gosu an interface I can be coerced to a block B, if the interface has exactly one
+            method defined on it that does not override a method already on
+              <span class='spec-code'>java.lang.Object</span>, the interface's methods arguments are contravariant
+            with respect to the block's arguments, and the interfaces return type is covariant with
+            respect to the blocks return type.</div><div class='spec-para'>
+This is an implicit coercion.</div>  </div><a name='core_conversions_default_blocktoblock'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Block to Coercable Block Coercion</div></h3></div>
+<div class='spec-para'>
+In Gosu a block B<span class='spec-subscript'>1</span> I can be coerced to a block
+              B<span class='spec-subscript'>2</span>, if B<span class='spec-subscript'>1</span>'s arguments are contravariant
+            with respect to B<span class='spec-subscript'>2</span>'s arguments and B<span class='spec-subscript'>1</span>'s
+            return type is coercable to B<span class='spec-subscript'>2</span>'s .</div><div class='spec-para'>
+This is an implicit coercion.</div>  </div><a name='core_conversions_default_numbertodimension'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Number to ILooseDimension Coercion</div></h3></div>
+<div class='spec-para'>
+Any <span class='spec-code'>java.lang.Number</span> can be coerced to any type implementing
+              <span class='spec-code'>gw.lang.ILooseDimension</span>.</div><div class='spec-para'>
+This is an implicit coercion.</div>  </div><a name='core_conversions_default_defaultarraytype'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+IDefaultArrayType to Java Array Coercion</div></h3></div>
+<div class='spec-para'>
+Non-bytecode Array Types  that
+            implement implement the <span class='spec-code'>gw.lang.reflect.IDefaultArrayType</span> can be coerced to
+            any array assignable from the type returned by
+              <span class='spec-code'>gw.lang.reflect.IDefaultArrayType#getConcreteComponentType()</span></div><div class='spec-para'>
+This is an implicit coercion.</div>  </div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Expressions</div></h1></div>
+<a name='core_expressions_classifications'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Expression classifications</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_operators'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Operators</div></h2></div>
+<div class='spec-para'>
+Expressions, aside from literal values, variables, and local field references, are
+          constructed from a combination of operators and operands.  Operands are the values that
+          are operated on by the operators, such as the + operator or the &amp;&amp; operator, and
+          depending on the operator they can take the form of expressions, names, or type literals.
+          There are three kinds of operators:<ul class='spec-itemizedlist'><li class='spec-listitem'><div class='spec-para'>
+Unary operators, which apply to a single operand and use prefix notation, such
+                as !x.</div></li><li class='spec-listitem'><div class='spec-para'>
+Binary opreators, which apply to two operands and use infix notation, such as x
+                + y.</div></li><li class='spec-listitem'><div class='spec-para'>
+Ternary operators, which apply to three operands and use infix notation such as
+                a ? b : c.  The conditional ternary operator is the only such operator.</div></li></ul></div><a name='core_expressions_operators_precedence'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Operator precedence and associativity</div></h3></div>
+<div class='spec-para'>
+When an expression contains multiple operators, the relative precedence of the
+            operators determines the way in which the expressions are grouped and the operators
+            applied.  When an operand occurs between two operators of differing precedence, the
+            expressions are grouped such that the operator with higher precedence is applied first.
+            For example, since * has higher precedence than +, the expression x + y * z is
+            equivalent to x + (y * z) rather than (x + y) * z.  Note that operator precedence
+            affects the relative grouping of the operands but does not affect the order of
+            evaluation; evaluation always proceeds from left to right, though the conditional
+            expressions may short-circuit prior to evaluating all of their operands, while the
+            contents of a block expression will be evaluated only when the block itself is
+            executed.</div><div class='spec-para'>
+The following table lists the relative precedence of all the operators in the Gosu
+            language; operators within the same category have the same precedence, and categories
+            higher up in the table have higher precedence than those lower down in the table.</div><div class='spec-para'>
+<div class='spec-informaltable'>
+<div class='spec-tgroup'>
+<div class='spec-colspec'>
+</div><div class='spec-colspec'>
+</div><div class='spec-colspec'>
+</div> <table class='spec-tbody'>
+ <tr class='spec-row'>
+ <th class='spec-entry'>
+Section </th>
+ <th class='spec-entry'>
+Category </th>
+ <th class='spec-entry'>
+Operators </th>
+ </tr>
+<tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Primary</td><td class='spec-entry'>x.y f(x) x[y] new eval</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Unary</td><td class='spec-entry'>+ - ! not ~ typeof statictypeof</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Typeas</td><td class='spec-entry'>as typeas</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Multiplicative</td><td class='spec-entry'>* / %</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Additive</td><td class='spec-entry'>+ -</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Shift</td><td class='spec-entry'>&lt;&lt; &gt;&gt; &gt;&gt;&gt;</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Relational</td><td class='spec-entry'>&lt; &gt; &lt;= &gt;= typeis</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Equality</td><td class='spec-entry'>== != ===</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Bitwise AND</td><td class='spec-entry'>&amp;</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Bitwise XOR</td><td class='spec-entry'>^</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Bitwise OR</td><td class='spec-entry'>|</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Conditional AND</td><td class='spec-entry'>&amp;&amp; and</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Conditional OR</td><td class='spec-entry'>|| or</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Conditional Ternary</td><td class='spec-entry'>?:</td></tr><tr class='spec-row'><td class='spec-entry'></td><td class='spec-entry'>Block</td><td class='spec-entry'>\-&gt;</td></tr> </table></div></div></div><div class='spec-para'>
+If an operand occurs between two operators of equal precedence, the associativity
+            of the operators determines the way in which the expressions are grouped.  All binary
+            operators are left-associative, meaning that an expression of the form x + y + z is
+            equivalent to (x + y) + z.  The conditional ternary operator is right-associative, such
+            that a ? b : c ? d : e is equivalent to a ? b : (c ? d : e).  In all cases, parentheses
+            can be used to explicitly control the expression groupings.</div>  </div>  </div><a name='core_expressions_memberlookup'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Member lookup</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_expressions_memberlookup_basetypes'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Base types</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_expressions_functions'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Function members</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_expressions_functions_arglists'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Argument lists</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_functions_inference'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Type inference</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_functions_overload'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Overload resolution</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_functions_invocation'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Function member invocation</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_expressions_primary'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Primary expressions</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_expressions_primary_literals'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Literals</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_names'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Simple names</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_parenthesized'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Parenthsized expressions</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_memberaccess'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Member access</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_invocation'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Invocation expressions</div></h3></div>
+<div class='spec-para'>
+</div><a name='core_expressions_primary_invocation_methods'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Method invocations</div></h4></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_invocation_enhancement'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Enhancement method invocations</div></h4></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_invocation_blocks'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Block invocations</div></h4></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_expressions_primary_elementaccess'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Element access</div></h3></div>
+<div class='spec-para'>
+</div><a name='core_expressions_primary_elementaccess_array'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Array access</div></h4></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_elementaccess_map'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Map access</div></h4></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_elementaccess_property'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Reflective property access</div></h4></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_expressions_primary_thisaccess'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+This access</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_outeraccess'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Outer access</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_newop'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The new operator</div></h3></div>
+<div class='spec-para'>
+</div><a name='core_expressions_primary_newop_object'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Object creation expressions</div></h4></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_newop_objectinit'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Object initializers</div></h4></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_newop_collectioninit'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Collection initializers</div></h4></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_newop_mapinit'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Map initializers</div></h4></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_newop_array'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Array creation expressions</div></h4></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_newop_anonymousobject'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Anonymous object creation expressions</div></h4></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_expressions_primary_typeof'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The typeof operator</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_statictypeof'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The statictypeof operator</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_primary_blocks'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Block expressions</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_expressions_unary'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Unary operators</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_expressions_unary_plus'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Unary plus operator</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_unary_minus'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Unary minus operator</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_unary_logicalnegation'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Logical negation operator</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_unary_bitwisecomplement'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Bitwise complement operator</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_unary_as'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The as operator</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_expressions_arithmetic'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Arithmetic operators</div></h2></div>
+<div class='spec-para'>
+</div><div class='spec-productionset'>
+<a name='multiplicative_expression_production'></a><div class='spec-production'>
+<span class='spec-lhs'>multiplicative_expression</span><span class='spec-rhs'><span class='spec-nonterminal'>unary_expression</span> |
+            <span class='spec-nonterminal'>multiplicative_expression</span> *
+            <span class='spec-nonterminal'>unary_expression</span> |
+            <span class='spec-nonterminal'>multiplicative_expression</span> /
+            <span class='spec-nonterminal'>unary_expression</span> |
+            <span class='spec-nonterminal'>multiplicative_expression</span> %
+            <span class='spec-nonterminal'>unary_expression</span></span></div><a name='additive_expression_production'></a><div class='spec-production'>
+<span class='spec-lhs'>additive_expression</span><span class='spec-rhs'><span class='spec-nonterminal'>multiplicative_expression</span> | <span class='spec-nonterminal'>additive_expression</span> + <span class='spec-nonterminal'>multiplicative_expression</span> | <span class='spec-nonterminal'>additive_expression</span> - <span class='spec-nonterminal'>multiplicative_expression</span></span></div></div><a name='core_expressions_arithmetic_returntypes'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Standard Return Types</div></h3></div>
+<div class='spec-para'>
+Arithmetic operations can be applied to any of the primitive
+          numeric types (byte, char, short, int, long, float, or double),
+          boxed versions of those types, java.lang.BigInteger,
+          java.lang.BigDecimal, and anything that implements the
+          gw.lang.IDimension interface. The addition operation, in addition,
+          can also be applied to two CharSequences, resulting in a
+          String.</div><div class='spec-para'>
+When neither side implements IDimension and the left-hand side
+          is not a CharSequence, all arithmetic operations obey the same rules
+          as far as resolution of the resultant type. The resultant type is
+          what will be inferred as the type of the expression, and is also
+          used to widen arguments if necessary before applying the operation.
+          The rules for determining which type is returned are decided to
+          avoid losing precision, and choose the &quot;wider&quot; of the two types. If
+          the two types are the same width, such that one is a primitive type
+          and the other is the boxed version of that same type, the result
+          will be the primitive type. BigInteger types will be widened to
+          BigDecimal when combined with a decimal type such as float or
+          double, and operations that only concern short, Short, char,
+          Character, byte, or Byte types will always be widended up to int.
+          The following table summarizes the resulting types given the two
+          argument types:</div><div class='spec-table'>
+<div class='spec-title'>
+Resulting Types From Arithmetic Operations, Excluding
+            IDimension</div><div class='spec-tgroup'>
+ <table class='spec-tbody'>
+ <tr class='spec-row'>
+ <th class='spec-entry'>
+Argument Type 1 </th>
+ <th class='spec-entry'>
+Argument Type 2 </th>
+ <th class='spec-entry'>
+Resulting Type </th>
+ </tr>
+<tr class='spec-row'><td class='spec-entry'>BigDecimal</td><td class='spec-entry'>anything</td><td class='spec-entry'>BigDecimal</td></tr><tr class='spec-row'><td class='spec-entry'>BigInteger</td><td class='spec-entry'>float, Float, double, or Double</td><td class='spec-entry'>BigDecimal</td></tr><tr class='spec-row'><td class='spec-entry'>BigInteger</td><td class='spec-entry'>byte, Byte, char, Character, short, Short, int,
+                  Integer, long, Long, or BigInteger</td><td class='spec-entry'>BigInteger</td></tr><tr class='spec-row'><td class='spec-entry'>double</td><td class='spec-entry'>byte, Byte, char, Character, short, Short, int,
+                  Integer, long, Long, float, Float, double, or Double</td><td class='spec-entry'>double</td></tr><tr class='spec-row'><td class='spec-entry'>Double</td><td class='spec-entry'>byte, Byte, char, Character, short, Short, int,
+                  Integer, long, Long, float, Float, or Double</td><td class='spec-entry'>Double</td></tr><tr class='spec-row'><td class='spec-entry'>float</td><td class='spec-entry'>byte, Byte, short, Short, int, Integer, long, Long,
+                  float, or Float</td><td class='spec-entry'>float</td></tr><tr class='spec-row'><td class='spec-entry'>Float</td><td class='spec-entry'>byte, Byte, short, Short, int, Integer, long, Long,
+                  or Float</td><td class='spec-entry'>Float</td></tr><tr class='spec-row'><td class='spec-entry'>long</td><td class='spec-entry'>byte, Byte, char, Character, short, Short, int,
+                  Integer, long, or Long</td><td class='spec-entry'>long</td></tr><tr class='spec-row'><td class='spec-entry'>Long</td><td class='spec-entry'>byte, Byte, char, Character, short, Short, int,
+                  Integer, or Long</td><td class='spec-entry'>Long</td></tr><tr class='spec-row'><td class='spec-entry'>int</td><td class='spec-entry'>byte, Byte, char, Character, short, Short, int, or
+                  Integer</td><td class='spec-entry'>int</td></tr><tr class='spec-row'><td class='spec-entry'>Integer</td><td class='spec-entry'>byte, Byte, char, Character, short, Short, or
+                  Integer</td><td class='spec-entry'>Integer</td></tr><tr class='spec-row'><td class='spec-entry'>byte, Byte, char, Character, short, or Short</td><td class='spec-entry'>byte, Byte, char, Character, short, or Short</td><td class='spec-entry'>int</td></tr> </table></div></div>  </div><a name='core_expressions_arithmetic_dimensional'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Dimensional Arithmetic</div></h3></div>
+<div class='spec-para'>
+Gosu supports a limited type of arithmetic operator
+          overloading via the gw.lang.IDimension interface. In order to
+          operate on an IDimension, the type in question must be final. A
+          class that implements the IDimension interface can override the
+          addition, subtraction, multiplication, division, and remainder
+          operations by implementing an appropriately-named method that takes
+          a single argument. If the left-hand side of an arithmetic expression
+          implements the IDimension interface and has an override method
+          appropriate to the operator that takes, as its sole argument, an
+          object whose type exactly matches the type of the right-hand side
+          operand, then the resulting type of the arithmetic expression will
+          be the return type of that method and that method will be used at
+          runtime.</div><div class='spec-para'>
+An IDimension can conceptually thought of as a number plus
+          some base, i.e. 3 dollars or 15 meters. The set of operations
+          allowed on an IDimension when no override is present are thus
+          generally restricted to those that will sensibly preserve the base:
+          for example, 15 meters can be added to 15 meters to give 30 meters
+          (the same base), but 15 meters * 30 meters results in a different
+          base. Conversely, 15 meters + 3 is non-sensical, whereas 15 meters /
+          3 results in 5 meters. Thus, addition and subtraction are allowed
+          between two dimensions that are exactly the same type, while
+          multiplication, division, and remainder are allowed between a
+          left-hand side dimension and a right-hand side scalar, and
+          multiplication is allowed between a right-hand side dimension and a
+          left-hand side scalar.</div><div class='spec-table'>
+<div class='spec-title'>
+Resulting Types From Arithmetic Operations Involving
+            IDimension</div><div class='spec-tgroup'>
+ <table class='spec-tbody'>
+ <tr class='spec-row'>
+ <th class='spec-entry'>
+Left-Hand Side Type </th>
+ <th class='spec-entry'>
+Right-Hand Side Type </th>
+ <th class='spec-entry'>
+Operation </th>
+ <th class='spec-entry'>
+Resulting Type </th>
+ </tr>
+<tr class='spec-row'><td class='spec-entry'>IDimension with operator override T opName(R)</td><td class='spec-entry'>R</td><td class='spec-entry'>any</td><td class='spec-entry'>T</td></tr><tr class='spec-row'><td class='spec-entry'>R, where R is not an IDimension</td><td class='spec-entry'>IDimension with operator override T opName(R)</td><td class='spec-entry'>+ or *</td><td class='spec-entry'>T</td></tr><tr class='spec-row'><td class='spec-entry'>IDimension with no override</td><td class='spec-entry'>Same as LHS</td><td class='spec-entry'>+ or -</td><td class='spec-entry'>LHS type</td></tr><tr class='spec-row'><td class='spec-entry'>IDimension with no override</td><td class='spec-entry'>Any non-dimension numeric type</td><td class='spec-entry'>* or / or %</td><td class='spec-entry'>LHS Type</td></tr><tr class='spec-row'><td class='spec-entry'>Any non-dimension numeric type</td><td class='spec-entry'>IDimension with no override</td><td class='spec-entry'>*</td><td class='spec-entry'>RHS type</td></tr> </table></div></div>  </div><a name='core_expressions_arithmetic_generalrules'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+General Arithmetic Rules</div></h3></div>
+<div class='spec-para'>
+The same general structure of arithmetic evaluation applies to all five arithmetic
+            operators. In all cases except for String concatenation, evaluation proceeds by
+            evaluating the left-hand side expression, then the right-hand side expression. After
+            both operands have been evaluated, if either operand has evaluated to null a
+            NullPointerException will be thrown. If neither operand is statically determined to be
+            an IDimension, both arguments will then be coerced, according to the coercion rules, to
+            the return type of the expression as described in the section  <a class='spec-link' href='#core_expressions_arithmetic_returntypes'>
+arithmetic return types </a>. The
+            operation will then be applied, as described in the sections below pertaining to each
+            operator.</div><div class='spec-para'>
+If at least one of the two operations is an IDimension, the resulting type will be
+            determined by the rules described under  <a class='spec-link' href='#core_expressions_arithmetic_dimensional'>
+dimensional arithmetic </a>, with
+            the method name detailed in the operator-specific section of the spec used for
+            overrides. In that case, if the operator is overridden, the result of the expression
+            will be determined by calling the overridden operator. If the operator is not
+            overridden, the operation will be performed by first transforming any IDimension
+            operands into numeric types by calling the toNumber() method on them. Those values,
+            along with any non-dimension operands, will then be coerced to whatever type the
+            IDimension argument returns from the numberType() method. The arithmetic operation on
+            the two resulting numbers will then be performed according to the rules specified for
+            that operation, and the result will then be translated back into an IDimension by
+            calling the fromNumber(T) method on the IDimension argument. If both arguments are
+            IDimensions, the left-hand-side operand will be the one that fromNumberType() is invoked
+            on.</div>  </div><a name='core_expressions_arithmetic_addition'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Addition</div></h3></div>
+<div class='spec-para'>
+Addition of numeric types proceeds according to the rules
+          described by the Java Language Spec, Third Edition, Section 15.18.2
+          (Additive Operators (+ and -) for Numeric Types). If the resulting
+          type is a BigInteger, the result of the expression will be the
+          result of calling the add(BigInteger) method on the left-hand-side
+          value. If the resulting type is a BigDecimal, the result of the
+          expression will be the result of calling add(BigDecimal) on the
+          left-hand-side value. In the event that at least one of the operands
+          is an IDimension, the method name &quot;add&quot; will be used to look for an
+          overridden method.</div><div class='spec-para'>
+If the addition expression involves two CharSequence
+          arguments, the result will be the result of coercing both sides to
+          Strings (including transforming null into the String &quot;null&quot;) and
+          then concatenating them to form a String result object. As with
+          numeric addition, the left-hand side will be evaluated first, then
+          the right-hand side.</div>  </div><a name='core_expressions_arithmetic_subtraction'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Subtraction</div></h3></div>
+<div class='spec-para'>
+Subtraction proceeds according to the rules described by the
+          Java Language Spec, Third Edition, Section 15.18.2 (Additive
+          Operators (+ and -) for Numeric Types). If the resulting type is a
+          BigInteger, the result of the expression will be the result of
+          calling the subtract(BigInteger) method on the left-hand-side value.
+          If the resulting type is a BigDecimal, the result of the expression
+          will be the result of calling subtract(BigDecimal) on the
+          left-hand-side value. In the event that at least one of the operands
+          is an IDimension, the method name &quot;subtract&quot; will be used to look
+          for an overridden method.</div>  </div><a name='core_expressions_arithmetic_multiplication'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Multiplication</div></h3></div>
+<div class='spec-para'>
+Multiplication proceeds according to the rules described by
+          the Java Language Spec, Third Edition, Section 15.17.1
+          (Multiplicative Operator *). If the resulting type is a BigInteger,
+          the result of the expression will be the result of calling the
+          multiply(BigInteger) method on the left-hand-side value. If the
+          resulting type is a BigDecimal, the result of the expression will be
+          the result of calling multiply(BigDecimal) on the left-hand-side
+          value. In the event that at least one of the operands is an
+          IDimension, the method name &quot;multiply&quot; will be used to look for an
+          overridden method.</div>  </div><a name='core_expressions_arithmetic_division'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Division</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_arithmetic_remainder'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Remainder</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_expressions_shift'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Shift operators</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_relational'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Relational and type-testing operators</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_expressions_relational_numeric'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Numeric comparison operators</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_relational_string'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+String comparison operators</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_relational_equality'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Equality operators</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_relational_typeis'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The typeis operator</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_expressions_logical'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Logical operators</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_conditionallogical'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Conditional logical operators</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_ternary'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+The ternary operator</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_blocks'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Block expressions</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_expressions_eval'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+The eval expression</div></h2></div>
+<div class='spec-para'>
+</div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Statements</div></h1></div>
+<div class='spec-para'>
+</div><a name='core_statements_reachability'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+End points and reachability</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_statements_statementlists'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Statement lists</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_statements_empty'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+The empty statement</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_statements_decl'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Declaration statements</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_statements_decl_localvar'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Local variable declarations</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_statements_expressions'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Expression statements</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_statements_selection'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Selection statements</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_statements_selection_if'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The if statement</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_statements_selection_switch'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The switch statement</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_statements_iteration'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Iteration statements</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_statements_iteration_while'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The while statement</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_statements_iteration_do'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The do statement</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_statements_iteration_for'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The for statement</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_statements_jumps'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Jump statements</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_statements_jumps_break'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The break statement</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_statements_jumps_continue'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The continue statement</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_statements_jumps_return'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The return statement</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_statements_jumps_throw'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The throw statement</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_statements_trycatch'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+The try statement</div></h2></div>
+<div class='spec-para'>
+The try statement provides a mechanism for handling exceptions that occur during
+          execution of the enclosed code, as well as to ensure the execution of a block of code upon
+          exit of the try block for any reason. The try statement's grammar is defined as
+          follows:</div><div class='spec-productionset'>
+<a name='try_statement_production'></a><div class='spec-production'>
+<span class='spec-lhs'>try_statement</span><span class='spec-rhs'>try <span class='spec-nonterminal'>statement</span><span class='spec-nonterminal'>catch_clauses</span> | try <span class='spec-nonterminal'>statement</span> [<span class='spec-nonterminal'>catch_clauses</span>]
+              finally <span class='spec-nonterminal'>statement</span></span></div><a name='catch_clauses_production'></a><div class='spec-production'>
+<span class='spec-lhs'>catch_clauses</span><span class='spec-rhs'><span class='spec-nonterminal'>catch_clause</span> | <span class='spec-nonterminal'>catch_clauses</span><span class='spec-nonterminal'>catch_clause</span></span></div><a name='catch_clause_production'></a><div class='spec-production'>
+<span class='spec-lhs'>catch_clause</span><span class='spec-rhs'>catch (<span class='spec-nonterminal'>identifier</span> : <span class='spec-nonterminal'>type_literal</span> ) <span class='spec-nonterminal'>statement</span></span></div></div><div class='spec-para'>
+A try statement can include either one or more catch blocks, a finally block, or one
+          or more catch blocks followed by a finally block.</div><div class='spec-para'>
+Each catch statement must use an identifier that is not already used within the
+          enclosing scope, and the type literal must be a type that extends from
+          java.lang.Throwable. Type variables are not allowed as part of the catch
+          declaration.</div><div class='spec-para'>
+When the try statement is executed, execution begins at the start of the try block. If
+          the try block finishes execution normally, control is then transferred to the finally
+          block, if any, and otherwise to the end of hte try statement. If the try block is exited
+          prior to that point due to a return, continue, or break statement, control is first
+          transferred to the finally block, and then control is transferred back from the finally
+          block to complete the return, continue, or break action. In the case of a return
+          statement, the finally block is executed after the return value has already been
+          determined, such that a statement of the form &quot;return x&quot; such that x is modified by the
+          finally block will return the value of x prior to the finally block's execution.</div><div class='spec-para'>
+If an exception is propogated to any part of the try block (i.e. as the result of a
+          throw within the try block, or the execution of a method call within the try block that
+          leads to an unhandled exception), the catch blocks will be consulted in the order they
+          appear in the source file. The first catch block whose type is assignable from the type of
+          the exception will have control transferred to it. If no matching catch block is present,
+          the finally block, if any, will first be executed, and if the finally block completes
+          normally the exception will then propogate out of the try block. When control is
+          transferred to a catch block, the raised exception will be available as the variable named
+          by the catch block's identifier. If the catch block finishes normally, control is then
+          transferred to the start of the finally block, if any, and otherwise to the end of the try
+          statement. Any return, continue, or break from within the catch block will first transfer
+          control to the finally block in exactly the same way as when those statements occur within
+          the try block. If an exception is propogated within the catch block, the finally statement
+          is first executed, and then the exception is propogated out of the try statement.</div><div class='spec-para'>
+If an exception occurs during the execution of the finally block, the exception is
+          propogated out of the finally block and control is not transferred back to complete any
+          return, continue, or break that may have triggered the finally block. If the finally block
+          was executed as the result of an exception from within the try block or a catch block,
+          that original exception is lost and the exception occuring within the finally block is
+          propogated. If the finally block completes normally, control is transferred to the end of
+          the try statement. Usage of the return statement within a finally block will generate a
+          parse error, as will any continue or break statement that transfers control outside of the
+          finally block.</div>  </div><a name='core_statements_using'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+The using statement</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_statements_assignment'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Assignment statements</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_statements_assignment_simple'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Simple assignment</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_statements_assignment_compound'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Compound assignment</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Namespaces</div></h1></div>
+<div class='spec-para'>
+</div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Classes</div></h1></div>
+<a name='core_classes_decl'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Class declarations</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_classes_decl_modifiers'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Class modifiers</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_decl_typeparams'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Type parameters</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_decl_base'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Class base specification</div></h3></div>
+<div class='spec-para'>
+</div><a name='core_classes_decl_base_classes'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Base classes</div></h4></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_decl_base_ifaces'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Interface implementations</div></h4></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_classes_decl_typeparamconstraints'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Type parameter constraints</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_decl_body'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Class body</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_classes_members'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Class members</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_classes_members_instancetype'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+The instance type</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_members_constructedtypes'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Members of constructed types</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_members_inheritance'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Inheritance</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_members_accessmods'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Access modifiers</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_members_constituenttypes'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Constituent types</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_members_staticandinstance'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Static and instance members</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_members_nestedtypes'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Nested types</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_members_reservednames'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Reserved member names</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_classes_fields'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Fields</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_classes_fields_staticandinstance'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Static and instance fields</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_fields_init'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Field initialization</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_fields_varinit'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Variable initializers</div></h3></div>
+<div class='spec-para'>
+</div><a name='core_classes_fields_varinit_static'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Static field initialization</div></h4></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_fields_varinit_instance'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h4><div class='spec-title'>
+Instance field initialization</div></h4></div>
+<div class='spec-para'>
+</div>  </div>  </div>  </div><a name='core_classes_methods'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Methods</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_classes_methods_params'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Method parameters</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_methods_staticandinstance'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Static and instance methods</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_methods_abstract'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Abstract methods</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_methods_bodies'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Method bodies</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_methods_overloading'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Method overloading</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_classes_properties'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Properties</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_classes_properties_staticandinstance'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Static and instance properties</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_properties_accessors'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Accessors</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_properties_automatic'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Automatically implemented properties</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_properties_accessibility'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Accessibility</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_properties_abstract'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Abstract accessors</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_classes_constructors'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Constructors</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_classes_constructors_varinit'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Instance variable initializers</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_constructors_execution'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Constructor execution</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_constructors_default'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Default constructors</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_classes_constructors_private'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Private constructors</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Arrays</div></h1></div>
+<div class='spec-para'>
+</div><a name='core_arrays_types'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Array types</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_arrays_creation'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Array creation</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_arrays_access'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Array element access</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_arrays_members'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Array members</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_arrays_covariance'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Array covariance</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_arrays_init'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Array initializers</div></h2></div>
+<div class='spec-para'>
+</div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Interfaces</div></h1></div>
+<div class='spec-para'>
+</div><a name='core_interfaces_decl'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Interface declarations</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_interfaces_decl_modifiers'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Interface modifiers</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_interfaces_decl_base'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Base interfaces</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_interfaces_decl_body'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Interface body</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_interfaces_members'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Interface members</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_interfaces_members_fields'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Interface fields</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_interfaces_members_methods'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Interface methods</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_interfaces_members_properties'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Interface properties</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_interfaces_members_access'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Interface member access</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_interfaces_membernames'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Fully qualified interface member names</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_interfaces_impl'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Interface implementations</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_interfaces_impl_explicit'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Explicit interface member implementations</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_interfaces_impl_uniqueness'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Uniqueness of implemented interfaces</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_interfaces_impl_genericmethods'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Implementation of generic methods</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_interfaces_impl_inheritance'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Interface implementation inheritance</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_interfaces_impl_reimplementation'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Interface re-implementation</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_interfaces_impl_abstractclasses'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Abstract classes and interfaces</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Enums</div></h1></div>
+<div class='spec-para'>
+Enums in the Gosu language work similarly to enums in the Java
+      language, as descrived in the Java Language Spec, Third Edition, section
+      8.9 (Enums). An enum declaration is defined as follows:</div><div class='spec-productionset'>
+<a name='enum_declaration_production'></a><div class='spec-production'>
+<span class='spec-lhs'>enum_declaration</span><span class='spec-rhs'>[<span class='spec-nonterminal'>class_modifiers</span>] enum
+          <span class='spec-nonterminal'>identifier</span> [implements
+          <span class='spec-nonterminal'>interface_list</span>] {[<span class='spec-nonterminal'>enum_constants</span>] [,] [<span class='spec-nonterminal'>class_members</span>]}</span></div><a name='enum_constants_production'></a><div class='spec-production'>
+<span class='spec-lhs'>enum_constants</span><span class='spec-rhs'><span class='spec-nonterminal'>enum_constant</span> |
+          <span class='spec-nonterminal'>enum_constants</span> , <span class='spec-nonterminal'>enum_constant</span></span></div><a name='enum_constant_production'></a><div class='spec-production'>
+<span class='spec-lhs'>enum_constant</span><span class='spec-rhs'><span class='spec-nonterminal'>annotations</span><span class='spec-nonterminal'>identifier</span> [<span class='spec-nonterminal'>enum_arguments</span>]</span></div><a name='enum_arguments_production'></a><div class='spec-production'>
+<span class='spec-lhs'>enum_arguments</span><span class='spec-rhs'>([<span class='spec-nonterminal'>argument_list</span>])</span></div></div><div class='spec-para'>
+An enum is conceptually a final class that extends java.lang.Enum,
+      parameterized on the enum itself, with the only instances of the enum
+      represented by the constants declared within the enum itself. An enum
+      cannot be explicitly instantiated, cannot be reflectively instantiated,
+      is treated specially by Java serialization, and the clone() method on
+      the java.lang.Enum supertype is marked as final; together these prevent
+      there from ever being any instances of the enum other than the singleton
+      instances represented by the constants declared on the enum itself.
+      Since each enum constant is a singleton instance, enums can be safely
+      compared both by == or by ===, and they can be safely compared using ==
+      by any Java code that accesses them. Top-level enums must be public, are
+      implicitly final (though it is acceptable to explicitly declare them as
+      such), and cannot be declared abstract. A nested enum will be implicitly
+      considered static, though it's permissable to explicitly declare it as
+      static as well.</div><div class='spec-para'>
+TODO - AHK - Discuss annotations on enum constants</div><div class='spec-para'>
+The list of constants on an enum implicitly defines a set of
+      static final fields on the enum, with the fields initialized in the
+      order the constants are declared and prior to any other static fields on
+      the enum. If an enum constant is followed by a list of arguments, the
+      associated constructor will be invoked on the enum, and a compile error
+      will be generated if there is no such matching constructor. Otherwise,
+      the enum constant is considered to be invoking the enum's no-arg
+      constructor. It is an error to explicitly invoke the super constructor
+      within an enum constructor.</div><div class='spec-para'>
+In addition to implicitly extending the java.lang.Enum superclass,
+      all enums are also considered to implement the
+      gw.lang.reflect.IEnumValue interface. The following methods are
+      implicitly added to all enums (and thus explicit methods or properties
+      cannot conflict with them), where E is the name of the enum:</div><div class='spec-programlisting'>
+/**
+ * Returns an array of values of this enum type in the order that they're declared.
+ */
+public static function values() : E[]
+
+/**
+ * Returns the enum type of this constant of this type with exactly the specified name,
+ * or throws an IllegalArgumentException if no such enum constant exists on this type.
+ */
+public static function valueOf(String name) : E
+
+/**
+ * Returns a List of values of this enum type in the order that they're declared.
+ */
+public static property get AllValues() : java.util.List&lt;E&gt;
+
+/**
+ * Returns the name of this enum constant.
+ */
+public property get Name() : String
+
+/**
+ * Returns the name of this enum constant
+ */
+public property get Code() : String
+
+/**
+ * Returns the name of this enum constant
+ */
+public property get DisplayName() : String
+
+/**
+ * Returns the automatically-assigned ordinal value of this enum
+ */
+public property get Ordinal() : int
+
+/**
+ * Returns this enum constant
+ */
+public property get Value() : Object</div><div class='spec-para'>
+The enum itself may contain any other normal class members that
+      are permissable on a final, non-abstract class.</div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Enhancements</div></h1></div>
+<a name='core_enhancements_overview'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Overview</div></h2></div>
+<div class='spec-para'>
+Enhancements provide a way to add new methods and properties to
+        existing types. The type to which enhancements This chapter discusses
+        the semantics of enhancements and how they interact with inheritance
+        and generics.</div><div class='spec-para'>
+Enhancements, like classes, must be defined in a file with the
+        same base name as the enhancement. The file extension for enhancments
+        is <span class='spec-code'>.gsx</span>.</div><div class='spec-para'>
+Enhancements can be annotated like classes, but annotations
+        <span class='spec-emphasis'>do not</span> apply to the enhanced type. Rather, they
+        apply only to the enhancement type.</div><div class='spec-para'>
+The body of an enhancement defines methods and properties.
+        Fields and constructors are not allowed. The methods and properties
+        can have access modifiers. Abstract methods are not allowed. Method
+        overloading is not allowed. Methods and properties can be static.
+        Static initializers are allowed.</div><div class='spec-para'>
+An enhancement declaration takes the following form:</div><div class='spec-programlisting'>
+package example
+
+enhancement ExampleEnhancement : ExampleEnhancedType { 
+
+  function exampleFunction() {
+    print( &quot;This is an example enhancement method&quot; )
+  }
+
+  property get ExampleProperty() : String {
+    return &quot;This is an example property&quot;
+  }
+
+  static function exampleStaticFunction() {
+    print( &quot;This is an example static enhancement method&quot; )
+  }
+
+  static property get ExampleStaticProperty() : String {
+    return &quot;This is an example static property&quot;
+  }
+}</div><div class='spec-para'>
+The enhancement above is named <span class='spec-code'>ExampleEnhancement</span>
+        and it enhances the <span class='spec-code'>ExampleEnhancedType</span> type.</div>  </div><a name='core_enhancements_decl'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Enhancement declarations</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_enhancements_decl_modifiers'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Enhancement modifiers</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_enhancements_decl_enhancedclass'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Enhanced class declaration</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_enhancements_decl_typeparams'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Type parameters</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_enhancements_decl_body'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Enhancement body</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_enhancements_members'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Enhancement members</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_enhancements_members_available'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Available members</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_enhancements_members_methods'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Enhancement methods</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_enhancements_members_properties'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Enhancement properties</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_enhancements_members_fields'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Enhancement fields</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_enhancements_members_access'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Enhancement member access</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_enhancements_invocation'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Enhancement invocation</div></h2></div>
+<div class='spec-para'>
+</div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Exceptions</div></h1></div>
+<div class='spec-para'>
+</div><a name='core_exceptions_causes'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Causes of exceptions</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_exceptions_throwable'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+The java.lang.Throwable class</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_exceptions_handling'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+How exceptions are handled</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_exceptions_commonclasses'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Common Exception classes</div></h2></div>
+<div class='spec-para'>
+</div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Annotations</div></h1></div>
+<div class='spec-para'>
+Gosu supports <span class='spec-emphasis'>Annotations</span>, which allow programmers to specify
+        declarative information about the features (e.g. functions, classes or properties) defined
+        in Gosu. Annotations in Gosu are conceptually and syntactically related to  <a class='spec-link' href='http://java.sun.com/docs/books/jls/third_edition/html/interfaces.html#9.7'>
+Annotations in Java </a>, and feature interoperability with them, but have a different
+        definition API, closer to  <a class='spec-link' href='http://en.csharp-online.net/ECMA-334:_24.2_Attribute_specification'>
+Attributes
+          in C# </a>. </div><div class='spec-para'>
+Here is an example of an annotation usage in
+        Gosu:<div class='spec-programlisting'>
+@Deprecated()
+function deprecatedFunction() {
+  print( &quot;This function has been annotated as being deprecated&quot; )
+}</div></div><div class='spec-para'>
+The <span class='spec-code'>@Deprecated()</span> text is the annotation instance, which applies to
+        the <span class='spec-code'>deprecatedFunction()</span>. </div><a name='core_annotations_classes'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Annotation Classes</div></h2></div>
+<div class='spec-para'>
+Annotation classes are classes implement the <span class='spec-code'>gw.lang.IAnnotation</span>
+          marker interface.  Implementing this marker interface is all that is necessary for a type
+          to become available as an annotation.   Constructors for the class serve as the
+          specification of arguments to the annotation, making annotations almost identical to New
+          Expressions.</div><div class='spec-para'>
+Annotation classes are not allowed to have type parameters.</div><div class='spec-para'>
+Annotation classes can themselves include annotations.  An annotation class can
+          annotate itself.</div>  </div><a name='core_annotations_usagespecification'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Annotation Usage Specification</div></h2></div>
+<div class='spec-para'>
+An Annotations <span class='spec-emphasis'>usage</span> is defined as what and
+          annotation may annotate and with what cardinality the annotation may appear. This is
+          specified on the annotation class via the
+            <span class='spec-code'>gw.lang.annotation.AnnotationUsage</span> annotation.
+            <span class='spec-code'>AnnotationUsage</span> takes two enum arguments, a
+            <span class='spec-code'>gw.lang.annotation.UsageTarget</span> and a
+            <span class='spec-code'>gw.lang.annotation.UsageModifier</span>. </div><div class='spec-para'>
+The <span class='spec-code'>UsageTarget</span> argument specifies what the annotation can
+          annotate. Valid values are:<ul class='spec-itemizedlist'><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>AllTarget</span> - indicates that this usage modifier applies to all
+                element types</div></li><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>TypeTarget</span> - indicates that this usage modifier applies to
+                only types</div></li><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>ConstructorTarget</span> - indicates that this usage modifier
+                applies to only type</div></li><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>PropertyTarget</span> - indicates that this annotation can be used
+                only on a property</div></li><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>MethodTarget</span> - indicates that this annotation can be used
+                only on a method </div></li></ul>The <span class='spec-code'>UsageModifier</span> argument specifies the cardinality
+          of the annotation, that is, how many times it can appear. Valid values are:<ul class='spec-itemizedlist'><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>None</span> - indicates that this annotation cannot appear with the
+                element specified in this annotation usage.</div></li><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>One</span> - indicates that this annotation can appear once with the
+                element specified in this annotation usage.</div></li><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>Many</span> - indicates that this annotation can appear any number
+                of times with the element specified in this annotation usage.</div></li></ul>An annotation class with no <span class='spec-code'>AnnotationUsage</span> implies
+          the annotation is valid on all elements, and can appear multiple times.</div><div class='spec-para'>
+An annotation class with at least one <span class='spec-code'>AnnotationUsage</span> implies that
+          the annotation is not valid on any elements that do not have explicit
+            <span class='spec-code'>AnnotationUsage</span> annotations.</div><div class='spec-para'>
+An annotation class with an <span class='spec-code'>AnnotationUsage</span> with a
+            <span class='spec-code'>UsageTarget</span> of <span class='spec-code'>AllTarget</span> will apply to a
+          particular feature target if and only if there is not an
+            <span class='spec-code'>AnnotationUsage</span> for that specific feature target.</div><div class='spec-para'>
+If more than one <span class='spec-code'>AnnotationUsage</span> have the same feature target, the
+          more restrictive cardinality wins. </div><div class='spec-para'>
+<div class='spec-example'>
+<div class='spec-title'>
+Example of a Gosu Annotation Class With UsageTargets</div><div class='spec-programlisting'>
+package examples
+
+uses gw.lang.annotation.*
+
+@UsageTarget( AllTarget, One ) // for all target types, this annotation can appear once
+@UsageTarget( MethodTarget, Many ) // except for methods, where it can appear many times
+class ExampleAnnotation implements IAnnotation {
+
+}</div></div></div>  </div><a name='core_annotations_instances'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Annotation Instances</div></h2></div>
+<div class='spec-para'>
+The usage of Annotations in Gosu is almost identical to New Expressions, with the
+          same acessibility rules, etc. Rather than being preceded by the <span class='spec-code'>new</span>
+          keyword, however, annotations are preceded by the <span class='spec-code'>@</span> character. As with
+          New Expressions, either positional or named arguments, if allowed, can be used. </div><div class='spec-para'>
+Annotations can appear anywhere feature modifiers appear.</div><div class='spec-para'>
+The forms of arguments to annotations are not restricted in any way, although their
+          form may have an effect on Java interoperability.</div><div class='spec-para'>
+An annotation parses in the static namespace of its enclosing class, and cannot
+          refer to non-static features.</div>  </div><a name='core_annotations_evaluation'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Annotation Evaluation</div></h2></div>
+<div class='spec-para'>
+Gosu annotations are typically evaluated at runtime, not at compile time like Java
+          annotations. The annotations within a given Gosu class are evaluated in the static
+            <span class='spec-code'>$_evalAnnotations_$()</span> method of the class, which is evaluated the
+          first time annotations are requested for the given class.  </div><div class='spec-para'>
+There are to classes of annotations are are evaluated outside of this method:<ul class='spec-itemizedlist'><li class='spec-listitem'><div class='spec-para'>
+Java annotations satisfying constraints for inclusion in the backing class file.
+                (See  <a class='spec-link' href='#ann_class_files'>
+below </a>.)</div></li><li class='spec-listitem'><div class='spec-para'>
+Compile time annotations. (See  <a class='spec-link' href='#core_annotations_compiletime'>
+below </a>)</div></li></ul></div>  </div><a name='core_annotations_java'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Java Annotation Interoperation</div></h2></div>
+<a name='core_annotations_java_usage'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Java Annotation Usage</div></h3></div>
+<div class='spec-para'>
+Gosu offers interoperation with the existing Java annotation system. Java
+            annotations can be used to modify features in the same way as Gosu annotations. Java has
+            a separate syntax for annotations and there are no explicit constructors specified for
+            them. The Gosu compiler creates a synthetic constructor for them based on the following rules:<ul class='spec-itemizedlist'><li class='spec-listitem'><div class='spec-para'>
+A constructor will be created with arguments matching the elements of the
+                  Annotation Type (see  <a class='spec-link' href='http://java.sun.com/docs/books/jls/third_edition/html/interfaces.html#9.6'>
+JLS Chapter 9.6 </a>) The order of the constructor arguments are:<ul class='spec-itemizedlist'><li class='spec-listitem'><div class='spec-para'>
+All arguments whose corresponding element does not have a default value,
+                        ordered alphabetically.</div></li><li class='spec-listitem'><div class='spec-para'>
+All arguments whose corresponding element does have a default value,
+                        ordered alphabetically.</div></li></ul></div></li><li class='spec-listitem'><div class='spec-para'>
+All arguments corresponding to an element with a default value will be
+                  optional.</div></li><li class='spec-listitem'><div class='spec-para'>
+In the special case where the Annotation has a single argument, and if that
+                  argument is an array, a second constructor will be added that takes a single value
+                  of the component type of the array.</div></li></ul></div><div class='spec-para'>
+These rules closely approximate the behavior of Java annotations in Java,
+            although care should be taken since the arguments to the constructor for a Java
+            annotation does <span class='spec-emphasis'>not</span> necessarily correspond to the
+            lexical ordering of the elements in the annotation.</div>  </div><a name='core_annotations_java_spectranslation'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Java Annotation Usage Specification Translation</div></h3></div>
+<div class='spec-para'>
+Java annotations have
+            their own annotation usage specification, based on the
+              <span class='spec-code'>java.lang.annotation.Target</span> annotation. These are the usage rules
+            in Gosu:<ul class='spec-itemizedlist'><li class='spec-listitem'><div class='spec-para'>
+In Java, a given annotation can only appear once on a given feature. In Gosu,
+                  therefore, all Java annotations are considered to have a
+                    <span class='spec-code'>UsageModifier</span> of <span class='spec-code'>One</span></div></li><li class='spec-listitem'><div class='spec-para'>
+Arguments to <span class='spec-code'>java.lang.annotation.Target</span> are of type
+                    <span class='spec-code'>java.lang.annotation.ElementType</span> and are translated to
+                    <span class='spec-code'>UsageModifier</span> as follows:<ul class='spec-itemizedlist'><li class='spec-listitem'><div class='spec-para'>
+If no <span class='spec-code'>ElementType</span> is specified,
+                          <span class='spec-code'>UsageModifier</span> is <span class='spec-code'>AllTarget</span></div></li><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>java.lang.annotation.ElementType#CONSTRUCTOR</span>
+                        corresponds with <span class='spec-code'>ConstructorTarget</span></div></li><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>java.lang.annotation.ElementType#FIELD</span> corresponds
+                        with <span class='spec-code'>PropertyTarget</span></div></li><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>java.lang.annotation.ElementType#METHOD</span> corresponds
+                        with <span class='spec-code'>MethodTarget</span></div></li><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>java.lang.annotation.ElementType#TYPE</span> corresponds
+                        with <span class='spec-code'>TypeTarget</span></div></li><li class='spec-listitem'><div class='spec-para'>
+All other values correspond to the <span class='spec-code'>AllTarget</span></div></li></ul></div></li></ul></div>  </div><a name='core_annotations_java_classfiles'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><a name='ann_class_files'></a><div class='spec-title'>
+Java Annotations And Class Files</div></h3></div>
+<div class='spec-para'>
+In Java annotations end up compiled directly into the generated class files. This
+            necessitates that all arguments to annotations be compile-time constants (See  <a class='spec-link' href='http://java.sun.com/j2se/1.5.0/docs/guide/language/annotations.html'>
+here </a>.) Gosu has no such restrictions: arguments to annotations can be
+            arbitrary expressions since the annotations are not evaluated until runtime. However,
+            with java annotations only, the Gosu compiler makes an effort to include the annotations
+            in the generated class:<ul class='spec-itemizedlist'><li class='spec-listitem'><div class='spec-para'>
+If all arguments to a Java annotation usage are literals, the annotation will
+                  be evaluated at compile time and included in the backing class file.</div></li><li class='spec-listitem'><div class='spec-para'>
+If all arguments to a Java annotation usage are not literals, the Gosu parser
+                  will emit a warning at the call site, and the annotation will not be included in
+                  the generated class file.</div></li></ul></div>  </div>  </div><a name='core_annotations_system'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+System Annotations</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_annotations_javadoc'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+JavaDoc Style Annotations</div></h2></div>
+<div class='spec-para'>
+Gosu has special support for a few  <a class='spec-link' href='http://java.sun.com/j2se/1.5.0/docs/tooldocs/windows/javadoc.html'>
+JavaDoc </a>-style annotations that appearn in multiline (i.e.
+            <span class='spec-code'>/**/</span>-style) comments:<ul class='spec-itemizedlist'><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>@deprecated</span> will be transformed into a
+                  <span class='spec-code'>gw.lang.Deprecated</span> annotation, with the following text inserted
+                as the value of the annotation</div></li><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>@exception</span> and <span class='spec-code'>@throws</span> will be transformed
+                into a <span class='spec-code'>gw.lang.Throws</span> annotation, if and only if the immediately
+                following non-whitespace token can be transformed into a valid type literal. All
+                text after this token is inserted as the comment on the annotation.</div></li><li class='spec-listitem'><div class='spec-para'>
+<span class='spec-code'>@return</span> will be transformed into a
+                  <span class='spec-code'>gw.lang.Returns</span> annotation</div></li></ul></div>  </div><a name='core_annotations_compiletime'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Compile Time Annotations</div></h2></div>
+<div class='spec-para'>
+</div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Programs</div></h1></div>
+<div class='spec-para'>
+</div><a name='core_programs_decl'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Program declarations</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_programs_members'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Program members</div></h2></div>
+<div class='spec-para'>
+</div><a name='core_programs_members_statements'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Program statements</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_programs_members_vars'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Program variables</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_programs_members_functions'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Program functions</div></h3></div>
+<div class='spec-para'>
+</div>  </div><a name='core_programs_members_nestedtypes'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h3><div class='spec-title'>
+Nested types</div></h3></div>
+<div class='spec-para'>
+</div>  </div>  </div><a name='core_programs_externalsymbols'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+External program symbols</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_programs_execution'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Program execution</div></h2></div>
+<div class='spec-para'>
+</div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+Templates</div></h1></div>
+<div class='spec-para'>
+</div><a name='core_templates_decl'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Template declarations</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_templates_members'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Template members</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_templates_externalsymbols'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+External template symbols</div></h2></div>
+<div class='spec-para'>
+</div>  </div><a name='core_templates_execution'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+Template execution</div></h2></div>
+<div class='spec-para'>
+</div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+TODO</div></h1></div>
+<a name='javainterop_todo_todo'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+TODO</div></h2></div>
+<div class='spec-para'>
+</div>  </div></div><div class='spec-chapter'>
+    <div class='spec-chapter-title'><h1><div class='spec-title'>
+TODO</div></h1></div>
+<a name='typesystem_todo_todo'></a>  <div class='spec-section'>
+<div class='spec-section-title'><h2><div class='spec-title'>
+TODO</div></h2></div>
+<div class='spec-para'>
+</div>  </div></div>
+
+<!--#include virtual="footer.html" -->
+
+</body>
+<SCRIPT>setNav('documentation');</SCRIPT>
+</html>

@@ -1,0 +1,57 @@
+<html>
+
+<head>
+  <title>Links to other projects that use Gosu, or that we use in building Gosu</title>
+  <link rel="stylesheet" type="text/css" href="gosu.css"/>
+  <SCRIPT language="JavaScript" SRC="javascript/javascript.js"></SCRIPT>
+</head>
+
+<body>
+
+<!--#include virtual="header.html" -->
+
+
+      <h1>Links</h1>
+      <div>Here are a variety of links related to Gosu. Have another link to suggest? <a href="mailto:webmaster@gosu-lang.org">Let us know</a>.</div>
+
+      <ul class="links">
+        <li>
+			<a href="http://ssw.jku.at/dcevm" target="blank" class="linkName">DCEVM project site</a><br>
+			<div class="linkDescription">The Dynamic Code Evolution Virtual Machine (DCE VM) is a modified version of the Java HotSpot Virtual Machine (VM). The DCE VM supports any redefinition of loaded classes at runtime. You can add and remove fields and methods and make changes to the super types of a class using the DCE VM. The DCE VM is an improvement to the HotSpot VM, which only supports updates to method bodies.
+We recommend the use of the DCE VM for development against a running server. </div>
+		</li>
+
+        <li>
+			<a href="http://guidewiredevelopment.wordpress.com/" target="blank" class="linkName">Guidewire Development Blog</a><br>
+			<div class="linkDescription">Guidewire's platform developers have been blogging about the creation of not only the language, but other portions of our platform, as well as company life.  It's a good place to learn a little about the internals of Gosu, or see some of the historical thinking that went into the evolution of Gosu.</div>
+		</li>
+
+        <li>
+			<a href="http://code.google.com/p/ronin-gosu/" target="blank" class="linkName">Ronin Web Framework</a><br>
+			<div class="linkDescription">A very cool little Web UI Framework that uses some of the unique features of Gosu's typeloaders to let you put together a website really quickly.</div>
+		</li>
+
+        <li>
+			<a href="http://guidewire.com" target="blank" class="linkName">Guidewire Software</a><br>
+			<div class="linkDescription">Guidewire is where Gosu started.  See the <a href="history.shtml">History</a> page for details of the orgins of Gosu.   Guidewire graciously sponsors this website.</div>
+		</li>
+		
+		<li>
+			<a href="http://libgosu.org" target="blank" class="linkName">Lib Gosu</a><br>
+			<div class="linkDescription">Lib Gosu is an open source Ruby 2d game development library.  We share a name, and coolness, but we're very different things</div>
+		</li>
+		
+		<li>
+			<a href="http://lazygosu.org/" target="blank" class="linkName">Lazy Gosuer</a><br>
+			<div class="linkDescription">The Lazy Gosuer is a compilation of snippets and examples.  We think it demonstrates some of the features of the language pretty well, and is more fun than walking on hot coals.</div>
+		</li>
+
+      </ul>
+	
+
+	
+<!--#include virtual="footer.html" -->
+
+</body>
+<SCRIPT>setNav('download');</SCRIPT>
+</html>

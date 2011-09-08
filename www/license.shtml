@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <title>Gosu's Terms of Use</title>
+  <link rel="stylesheet" type="text/css" href="gosu.css"/>
+  <SCRIPT language="JavaScript" SRC="javascript/javascript.js"></SCRIPT>
+</head>
+
+<body>
+<!--#include virtual="header.html" -->
+      <h1>Terms of Use</h1>
+
+
+<center><h2>Gosu<br/>
+Terms of Use</h2></center>
+
+<p>Guidewire Software, Inc. ("Guidewire") offers the Gosu web site (as defined below) solely for your use in accordance with the following terms and conditions.  If you do not accept this Agreement, you do not have permission to use the Gosu web site in any way.  Any use by you of the Gosu web site shall constitute your binding acceptance of this Agreement.</p>
+
+<p>The Gosu web site shall mean all content (including without limitation all software in binary or source form, images, examples, documentation) made generally available by Guidewire at <a href="http://www.gosu-lang.org">http://www.gosu-lang.org</a>.</p>
+
+<h2>LICENSE</h2>
+
+<p>All software available for download (in source or executable format) from the Gosu web site is Copyright Guidewire, Inc, and Licensed under the <b>Apache License, Version 2.0</b> (the "License"); you may not use any of the Gosu software files except in compliance with the License.</p>
+
+<p>You may obtain a copy of the License at <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+
+<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+
+<h2>TRADEMARKS</h2>
+
+<p>Gosu(R), Guidewire(R), Guidewire Software, Guidewire ClaimCenter, Guidewire PolicyCenter, Guidewire BillingCenter, Guidewire Insurance Suite, Guidewire ContactCenter, Guidewire Studio,  Deliver Insurance Your Way, and the Guidewire logo (the "Guidewire Marks") are trademarks or registered trademarks of Guidewire Software, Inc. in the United States and/or other countries. You shall have no right to use Guidewire's registered trademarks except as expressly allowed by Guidewire and in accordance with Guidewire's TM acceptable use policy, which Guidewire may update from time to time in its sole discretion.  Notwithstanding anything to the contrary, all goodwill associated with all uses of the Guidewire Marks shall enure solely to the benefit of Guidewire.</p>
+
+<h2>PRIVACY</h2>
+
+<p>Guidewire collects industry standard usage statistics regarding the types and number of users who visit the Gosu web site.  Guidewire does not collect any personally identifiable information from user interactions with the Gosu web site.  However, the Gosu web site may contain links to third party web sites where personally identifiable information may be collected.  It is your responsibility to review and understand the privacy policies and practices of third party web sites.  Gosu has no control over third party web sites. </p>
+
+<h2>FEEDBACK</h2>
+
+<p>If you provide any input, suggestions, or feedback (on behalf of yourself if you are an individual and your company if you are acting on behalf of the company) relating to the Gosu web site ("Feedback"), then you grant Guidewire under all applicable intellectual property rights a non-exclusive, transferable, worldwide, perpetual, irrevocable, royalty-free license to use, disclose, copy, publish, license, modify, sublicense or otherwise distribute and exploit Feedback you provide.  You warrant to the best of your knowledge that you have rights to provide this Feedback, and if you are providing Feedback on behalf of a company, you warrant that you have the rights to provide Feedback on behalf of your company.  You also acknowledge that Guidewire is not required to incorporate your Feedback into any version of the Gosu web site or software.</p>
+
+<h2>YOUR REPRESENTATION</h2>
+
+<p>You represent, warrant and covenant that your use of the Gosu web site is and shall be at all times in compliance with all applicable laws, rules and regulations.  You agree and confirm that you will indemnify Guidewire for any and all costs and damages Guidewire may incur as a result of your breach of the foregoing representation.</p>
+
+<!--#include virtual="footer.html" -->
+
+</body>
+<SCRIPT>setNav('about');</SCRIPT>
+</html>
+

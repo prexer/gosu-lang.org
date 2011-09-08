@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Introduction to XML in Gosu</title>
+</head>
+<body>
+<h1>Introduction to XML in Gosu</h1>
+
+<font color="red"><b>Note: You can click on any image on this page to download the source code shown in the image</b></font><p>
+
+As of Gosu v0.8.5, there is a new XML databinding/DOM-type framework called <b><tt>XmlElement</tt></b>. We have made some unique design decisions that I think are first in the industry for this type of tool, aimed at making XML easier to work with from within Gosu.<p>
+
+You can create an XML document by using <b><tt>XmlElement</tt></b> directly. It's easy enough to use:<p>
+
+<a href="demo1.gsp"><img src="demo1.gsp.png"></a><p>
+
+If you're not using XML schemas, you can stop reading now. Usage of <b><tt>XmlElement</tt></b> is pretty self explanatory, and the Gosu editor's intellisense will help you in this regard. The real power of the new system comes into effect when an XML schema is involved.<p>
+
+So let's start with a simple schema:<p>
+
+<a href="simple.xsd"><img src="simple.xsd.png"></a><p>
+
+You can drop this XML schema anywhere you would be able to drop a Gosu class (it must be on the Gosu classpath):<p>
+
+<img src="commandline.png"><p>
+
+This causes Gosu types to be created via a custom typeloader. You can use these types to manipulate XML that conforms to the schema as follows:<p>
+
+<a href="demo2.gsp"><img src="demo2.gsp.png"></a><p>
+
+To bring things full circle, there happens to exist a schema for schemas, called the XML Schema schema. It's a schema that describes what a valid schema looks like. This particular schema (and a few others from the W3C) are included with the base Gosu distribution. They always exist in the type system under the package gw.xsd.w3c. So I'll finish up this intro with an example of using the XML schema schema to create the example schema above:<p>
+
+<a href="schemaexample.gsp"><img src="schemaexample.gsp.png"></a><p>
+
+I've intentionally left many questions unanswered here in order to keep this introduction as simple as possible, but there is excellent documentation on the entire subsystem in the gosu-lang.org site's documentation section. If you have any feedback or questions, I'll be monitoring <a href="http://groups.google.com/group/gosu-lang">the forum</a> and will do my best to help out.<p>
+
+And if you haven't tried Gosu, you can <a href="http://gosu-lang.org">download it here</a> for free.<p>
+
+- David Green-Lank - <p><p>
+
+</body>
+</html>

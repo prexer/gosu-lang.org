@@ -1,0 +1,78 @@
+<html>
+
+<head>
+  <title>Editors and syntax highlighting for Gosu</title>
+  <link rel="stylesheet" type="text/css" href="gosu.css"/>
+  <SCRIPT language="JavaScript" SRC="javascript/javascript.js"></SCRIPT>
+</head>
+
+<body>
+
+<!--#include virtual="header.html" -->
+	  <h1>Built-in Gosu Editor</h1>
+	  <div>This is the primary editor that we recommend you start with.  If you invoke gosu.sh or gosu.cmd, you will see the built-in editor.  If you follow the <a href="http://metapete.blogspot.com/2011/05/setting-up-gosu-project.html"> instructions for how to setup a project structure</a> and get your classpath setup, it will work well and provide intellisense, as well as some really useful keyboard shortcuts</div>
+	  <h2>Keyboard shortcuts</h2>
+	  <ul>
+	    <li> Ctrl-N - find a file/type, and try to open it.  Finds some types that the editor does not know how to open, like xsds and properties files.  You need to edit those types of files in some other editor.  Note that you will also need to restart the editor to take advantage of changes to properties files</li>
+		<li> Ctrl-T - find the Type of the variable/expression that your cursor is on.  This one is great for figuring out what the coercion engine in Gosu is going to coerce your untyped variable into</li>
+		<li> Ctrl-space - smart complete shows a popup for completing a partially typed expression, including:
+		  <ul>
+		  <li>partial variable names</li>
+		  <li>property or method name</li>
+		  <li>automatically adds a 'uses' statement for a type that hasn't been imported yet</li>
+		  </ul>
+		</li>
+		<li> Alt-Enter - Smart fix.  This trys to fix the error nearest the cursor </li>
+	  </ul>
+	  Note that there are some cases where you need to drop extra java jar dependencies into your &lt;gosu_home&gt;/ext directory.  
+      <h1>Emacs</h1>
+      <div>For those of you still clinging to Emacs, here is a mode for you to do gosu work with, provided by those of us still clinging to Emacs.</div>
+      <h2>Gosu Mode For Emacs:</h2>
+      <ul>
+        <li><a href="downloads/gosu-mode.el">gosu-mode.el</a></li>
+      </ul>
+	  
+	 <hl/>
+	   <h1>IntelliJ</h1>
+	   <div>For those of you using IntelliJ, there is an updated plugin on the IntelliJ download site called Gosu2.  It is also available inside IntelliJ.  We recommend you use the community edition of IntelliJ</div>
+	   
+	   <h2>To run gosu programs you need to either: </h2>
+	   <ul>
+	     <li>have Gosu libraries somewhere in your project </li>
+		 <li>define an environment variable for "gosu.home" pointing to your gosu dist directory, 
+		 <li>define a cmd line param for "gosu.home" e.g., -Dgosu.home=c:\mygosudist </li>
+		</ul>
+		 Note the debugger works regardless of whether you launch a Gosu program or you launch a Java one or a junit test or whatever. <br/>
+		<h2> What's not there yet?</h2> (Is this really still valid?)
+		<ul> 
+		  <li> Code completion</li>
+		  <li> Code navigation </li>
+		  <li> Basically any feature that relies on type resolution or parsing - Someday we'll provide those. </li>
+		</ul>
+		<h2>Known Issues </h2>
+		<ul>
+		  <li> Expressions in the debugger (in breakpoint conditions, watches, etc.) must be in Java (not Gosu) </li>
+		  <li> Some Gosu features are currently not well supported in the debugger stack frame e.g., closures</li>
+		</ul>
+	
+       <h2>Gosu Plugin for IntelliJ:</h2>
+       <ul>
+        <li><a href="http://plugins.intellij.net/plugin/?idea&id=6201">intelliJ plugin</a></li>
+       </ul>
+	   
+	<h1/>
+	   <h1>Eclipse</h1>
+	   <div>The original release of Gosu (0.7.0-C) also had an Eclipse plugin that provided some of the IDE features that we wanted to provide.  We have since moved most of our efforts over to the IJ editor.  We do have plans to re-release the eclipse editor at some point.  If you are interested in helping, please contact us.</div>
+	   
+	   <h2>You can still download the old version of the <a href="eclipse.shtml">Eclipse plugin </a>
+	   
+	   <h1>Others</h1>
+      <div>If you use another editor, and you've created a syntax definition file, let us know about it, and we'll link to it here.</div>
+     
+	
+<!--#include virtual="footer.html" -->
+
+</body>
+<SCRIPT>setNav('download');</SCRIPT>
+</html>
+

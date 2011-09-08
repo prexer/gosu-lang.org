@@ -1,0 +1,136 @@
+<html>
+<head>
+  <title>Comparing Gosu to other Languages</title>
+  <link rel="stylesheet" type="text/css" href="gosu.css"/>
+  <SCRIPT language="JavaScript" SRC="javascript/javascript.js"></SCRIPT>  
+</head>
+<body>
+<!--#include virtual="header.html" -->
+      <h1>Compare</h1>
+See how Gosu compares to other Java Virtual Machine (JVM) languages:
+      <br/>
+      <br/>
+		  <table width="800px" class="comparison" cellspacing="0" cellpadding="0" style="margin:16">
+			<tr>
+			  <th>&nbsp;</th>
+			  <th class="gosuColumn">Gosu</th>
+			  <th>Java</th>
+			  <th>JRuby</th>
+			  <th>Jython</th>
+			  <th>Scala</th>
+			  <th>Groovy</th>
+			  <th>Clojure</th>
+      </tr>
+			<tr class="odd">
+			  <td class="category">Extensible type system (inject types into the type system)</td>
+			  <td class="gosuColumn"><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			</tr>
+			<tr class="even">
+			  <td class="category">Static typing (type-safe at compile time)</td>
+			  <td class="gosuColumn"><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			</tr>
+			<tr class="even">
+			  <td class="category">Easy transition from Java</td>
+			  <td class="gosuColumn"><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			</tr>
+			<tr class="odd">
+			  <td class="category">Closures (Gosu calls these <i>blocks</i>)</td>
+			  <td class="gosuColumn"><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			</tr>
+			<tr class="even">
+			  <td class="category">Reified generics (check generic types at run time) </td>
+			  <td class="gosuColumn"><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			</tr>
+			<tr class="odd">
+			  <td class="category">Modify existing types<br>(no meta-programming)</td>
+			  <td class="gosuColumn"><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td><img src="images\check.png" alt="Y"/><span class="footnote">&nbsp;*</span></td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			</tr>
+			<tr class="even">
+			  <td class="category">No checked exceptions</td>
+			  <td class="gosuColumn"><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			</tr>
+			<tr class="odd">
+			  <td class="category">Solid IDE tooling</td>
+			  <td class="gosuColumn"><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			  <td>&nbsp;</td>
+			</tr>			
+			<tr class="odd">
+			  <td class="category">Embeddable open compiler</td>
+			  <td class="gosuColumn"><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			</tr>
+			<tr class="even">
+			  <td class="category">Not Lisp</td>
+			  <td class="gosuColumn"><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td><img src="images\check.png" alt="Y"/></td>
+			  <td>&nbsp;</td>
+			</tr>
+		  </table>
+		  
+		  <div>*Scala allows you to modify an existing type via <i>Implicit Conversions</i>, but it's pretty...well...complicated.</div>
+		  
+
+<p>See the Gosu documentation for a <a href="doc/wwhelp/wwhimpl/api.htm?&context=gosu&src=intro&topic=Welcome_to_Gosu">complete introduction to the Gosu language</a> and a reference table of  <a href="doc/wwhelp/wwhimpl/api.htm?&context=gosu&src=intro&topic=Notable_Differences_Between_Gosu_and_Java">syntax changes to convert Java code to Gosu code</a>.
+
+		  
+<!--#include virtual="footer.html" -->
+
+</body>
+<SCRIPT>setNav('about');</SCRIPT>
+</html>

@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /images/
+Disallow: /downloads/
+Disallow: /javascript/
+Disallow: /*.js$
+Disallow: /*.inc$
+Disallow: /*.css$
+Disallow: /eclipse/
+Disallow: */tmp/
