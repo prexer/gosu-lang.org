@@ -58,7 +58,7 @@
 
 <span ${"class"}="code-comment">// But with shiny new methods</span>
 someFile.write( strings.join( <span ${"class"}="code-string">"\n"</span> ) )
-		</pre>
+</pre>
       </div>
 
 <!--#include virtual="footer.html" -->
