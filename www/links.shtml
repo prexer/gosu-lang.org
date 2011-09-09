@@ -13,6 +13,48 @@
 
       <h1>Links</h1>
       <div>Here are a variety of links related to Gosu. Have another link to suggest? <a href="mailto:webmaster@gosu-lang.org">Let us know</a>.</div>
+	  
+	  <h2>Typeloaders and Projects that use Gosu</h2>
+		<ul class="links">
+        <li>
+			<a href="http://ronin-web.org" target="blank" class="linkName">Ronin Web Framework</a><br>
+			<div class="linkDescription">A MVC based Web UI Framework that uses some of the unique features of Gosu's typeloaders to let you put together a website quickly.   It uses a MVC paradigm, and convention over configuration, much like Rails.</div>
+		</li>	
+		<li>
+			<a href="https://github.com/jpcamara/Goson" target="blank" class="linkName">Goson JSON typeloader</a><br>
+			<div class="linkDescription">A typeloader for Gosu that creates first-class objects from a <a href="http://json-schema.org/">JSON Schema.</a></div>
+		</li>
+		<li>
+			<a href="https://github.com/akeefer/Tosa" target="blank" class="linkName">Tosa</a><br>
+			<div class="linkDescription">An ORM framework for the Gosu language</div>
+		</ul>
+		
+	  <h2>Blogs and articles about Gosu</h2>
+	     <ul class="links">
+	        <li>
+			<a href="http://guidewiredevelopment.wordpress.com/" target="blank" class="linkName">Guidewire Development Blog</a><br>
+			<div class="linkDescription">Guidewire platform developers blog about the creation of the language and other portions of our platform, as well as company life.  Learn a little about the internals of Gosu, or see some of the historical thinking that went into the evolution of Gosu.</div>
+		</li>				
+		<li>
+			<a href="http://lazygosu.org/" target="blank" class="linkName">Lazy Gosuer</a><br>
+			<div class="linkDescription">The Lazy Gosuer is a compilation of practical snippets and examples written by one of the Gosu engineers. </div>
+		</li>
+		<li> <a href="http://drdobbs.com/open-source/231001429" target="blank" class="linkName">Dr Dobbs Language of the month: July 2011</a><br>
+			<div class="linkDescription">Dr Dobbs had an article in July 2011 explaining the features of Gosu.</div>
+		</li>
+		<li> <a href="http://beust.com/weblog/2011/05/10/open-type-systems/" target="blank" class="linkName">Cedric Beust's blog</a><br>
+		    <div class="linkDescription">Language first impression from Cedric Beust, creator of TestNG.</div>
+		</li>
+		<li> <a href="http://www.bobbywarner.com/2010/12/21/gosu/" target="blank" class="linkName">Bobby Warner blog</a><br>
+		    <div class="linkDescription">Language first impression from a member of the Target IT team.		
+			</div>
+		</li>
+		<li> <a href="xml/introxml/index.html" target="blank" class="linkName"> Dana Lank's Introduction to XML </a><br>
+		     <div class="linkDescription">A simple tutorial of Gosu XML and XSD support from the Gosu engineer that created the XSD typeloader.</div>
+		</li>
+		 </ul>
+		 
+	  <h2>Other stuff</h2>
 
       <ul class="links">
         <li>
@@ -20,17 +62,6 @@
 			<div class="linkDescription">The Dynamic Code Evolution Virtual Machine (DCE VM) is a modified version of the Java HotSpot Virtual Machine (VM). The DCE VM supports any redefinition of loaded classes at runtime. You can add and remove fields and methods and make changes to the super types of a class using the DCE VM. The DCE VM is an improvement to the HotSpot VM, which only supports updates to method bodies.
 We recommend the use of the DCE VM for development against a running server. </div>
 		</li>
-
-        <li>
-			<a href="http://guidewiredevelopment.wordpress.com/" target="blank" class="linkName">Guidewire Development Blog</a><br>
-			<div class="linkDescription">Guidewire's platform developers have been blogging about the creation of not only the language, but other portions of our platform, as well as company life.  It's a good place to learn a little about the internals of Gosu, or see some of the historical thinking that went into the evolution of Gosu.</div>
-		</li>
-
-        <li>
-			<a href="http://code.google.com/p/ronin-gosu/" target="blank" class="linkName">Ronin Web Framework</a><br>
-			<div class="linkDescription">A very cool little Web UI Framework that uses some of the unique features of Gosu's typeloaders to let you put together a website really quickly.</div>
-		</li>
-
         <li>
 			<a href="http://guidewire.com" target="blank" class="linkName">Guidewire Software</a><br>
 			<div class="linkDescription">Guidewire is where Gosu started.  See the <a href="history.shtml">History</a> page for details of the orgins of Gosu.   Guidewire graciously sponsors this website.</div>
@@ -40,11 +71,7 @@ We recommend the use of the DCE VM for development against a running server. </d
 			<a href="http://libgosu.org" target="blank" class="linkName">Lib Gosu</a><br>
 			<div class="linkDescription">Lib Gosu is an open source Ruby 2d game development library.  We share a name, and coolness, but we're very different things</div>
 		</li>
-		
-		<li>
-			<a href="http://lazygosu.org/" target="blank" class="linkName">Lazy Gosuer</a><br>
-			<div class="linkDescription">The Lazy Gosuer is a compilation of snippets and examples.  We think it demonstrates some of the features of the language pretty well, and is more fun than walking on hot coals.</div>
-		</li>
+
 
       </ul>
 	
