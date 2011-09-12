@@ -1,4 +1,4 @@
-classpath "build-support/src,build-support/lib"
+classpath "."
 
 uses java.util.*
 uses java.io.*
@@ -11,9 +11,7 @@ uses org.apache.maven.artifact.ant.AttachedArtifact
 uses org.apache.maven.artifact.ant.Authentication
 uses org.apache.maven.artifact.ant.RemoteRepository
 
-uses build.www.*
-uses build.spec.*
-uses build.misc.*
+uses www.*
 
 var binariesRepository = LazyVar.make(\ -> {
   // TODO - use a target arg or system property rather than hard coding
@@ -59,7 +57,7 @@ function genSpec() {
 function buildWebsite() {
 
   log( "Copying website..." )
-  Ant.copy( :filesetList={file( "." ).fileset( :includes="www/**" )}, :todir=buildDir )
+  Ant.copy( :filesetList={file( "." ).fileset( :includes="www/**", :excludes="**/*.gst" )}, :todir=buildDir )
 
   log( "Create Examples zips..." )
 
