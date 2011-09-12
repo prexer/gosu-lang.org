@@ -26,7 +26,7 @@
 	  </ul>
 	  Note that there are some cases where you need to drop extra java jar dependencies into your &lt;gosu_home&gt;/ext directory.  
       <h1>Emacs</h1>
-      <div>For those of you still clinging to Emacs, here is a mode for you to do gosu work with, provided by those of us still clinging to Emacs.</div>
+      <div>For those of you still clinging to Emacs, here is a mode for you to do Gosu work with, provided by those of us still clinging to Emacs.</div>
       <h2>Gosu Mode For Emacs:</h2>
       <ul>
         <li><a href="downloads/gosu-mode.el">gosu-mode.el</a></li>
@@ -36,10 +36,10 @@
 	   <h1>IntelliJ</h1>
 	   <div>For those of you using IntelliJ, there is an updated plugin on the IntelliJ download site called Gosu2.  It is also available inside IntelliJ.  We recommend you use the community edition of IntelliJ</div>
 	   
-	   <h2>To run gosu programs you need to either: </h2>
+	   <h2>To run Gosu programs you need to either: </h2>
 	   <ul>
 	     <li>have Gosu libraries somewhere in your project </li>
-		 <li>define an environment variable for "gosu.home" pointing to your gosu dist directory, 
+		 <li>define an environment variable for "gosu.home" pointing to your Gosu dist directory, 
 		 <li>define a cmd line param for "gosu.home" e.g., -Dgosu.home=c:\mygosudist </li>
 		</ul>
 		 Note the debugger works regardless of whether you launch a Gosu program or you launch a Java one or a junit test or whatever. <br/>

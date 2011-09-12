@@ -24,7 +24,7 @@ Gosu is an imperative statically-typed object-oriented programming language that
 
 <h2>Gosu Classes</h2>
 
-<p>Below is an example of a Gosu class that demonstrates many of the features of Gosu. Mouse over any highlighted section to see explanations of each features of the language.</p>
+<p>Below is an example of a Gosu class that demonstrates many of the features of Gosu. Mouse over any highlighted section to see explanations of each feature of the language.</p>
 
 <pre class="code">
 <span class="codetip"><span><span class="keyword">package</span> example</span><div class="tip">Gosu supports package hierarchies just like Java. Packages correspond to the directory in which the Gosu class resides.

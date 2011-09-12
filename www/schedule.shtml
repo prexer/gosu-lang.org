@@ -11,13 +11,11 @@
       <h1>Schedule and rough roadmap</h1>
 <h2>
 <ul>
-  <li style="padding:16px">website src on github - Sep, 2011</li>
-  <li style="padding:16px">maven repo for past builds</li>
-  <li style="padding:16px">nightly builds</li>
-  <li style="padding:16px">IntelliJ plugin - target Jan-Feb 2012</li>
-  <li style="padding:16px">release zip of src - Mar, 2012</li>
-  <li style="padding:16px">build-script for src - May, 2012</li>
-  <li style="padding:16px">publish src on github - July, 2012</li>
+  <li style="padding:16px">Website src on github - Q4 2011</li>
+  <li style="padding:16px">Maven repo for past builds</li>
+  <li style="padding:16px">Nightly builds</li>
+  <li style="padding:16px">IntelliJ plugin - target Q1 2012</li>
+  <li style="padding:16px">Publish src on github - 1st half 2012</li>
   <li style="padding:16px">Eclipse plugin - TBD</li>
 </ul>
 
